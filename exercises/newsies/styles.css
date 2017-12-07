@@ -1,0 +1,57 @@
+
+body {
+    margin: auto;
+    width: 50%;
+}
+
+.heading {
+    text-align: center;
+    font-family: 'Cormorant Garamond', 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+h1 {
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    line-height: 1.7em;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    line-height: 1.1em; 
+    border-bottom: 2px solid black;
+    margin-top: 10px;
+    padding: 2px
+}
+
+#columns {
+    column-count: 3
+}
+
+img {
+    max-width: 60%;
+    float: left;
+    margin: 10px;
+    bottom: 20px
+}
+
+.italics {
+    font-style: italic;
+}
+
+#lead {
+    margin-top: 2px;
+}
+
+/* Your newspaper should have:
+
+A header with the name of your newspaper
+
+A title for the front page article
+
+A three columned body using p tags. (Hint: you will need to alter the display characteristic.)
+
+Several words in the body should be individually styled using inline elements. (i.e. highlighting, bolding, or text-color change)
+
+An image within the body of the article. */

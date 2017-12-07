@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple HTML Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body>
+    <div class="title">
+        <h1>SIMPLE HTML CALCULATOR<h1>
+            </div>
+    <div id="wrapper">
+        <!-- Addition -->
+        <div>
+            <input id="addOne" type="number" placeholder="Enter Number" value="">
+            <p>+</p>
+            <input id="addTwo" type="number" placeholder="Enter Number" value="">
+            <button id="addSubmit"> = </button>
+            <h3 id="addOutput"></h3>
+        </div>
+        <!-- Subtraction -->
+        <div>
+            <input id="subtractOne" type="number" placeholder="Enter Number" value="">
+            <p> — </p>
+            <input id="subtractTwo" type="number" placeholder="Enter Number" value="">
+            <button id="subtractSubmit"> = </button>
+            <h3 id="subtractOutput"></h3>
+        </div>
+        <!-- Multipicaiton -->
+        <div>
+            <input id="multOne" type="number" placeholder="Enter Number" value="">
+            <p> x </p>
+            <input id="multTwo" type="number" placeholder="Enter Number" value="">
+            <button id="multSubmit"> = </button>
+            <h3 id="multOutput"></h3>
+        </div>
+        <div>
+            <button id="clear">CLEAR</button>
+        </div>
+    </div>
+    <script type "text/javascript" src="app.js"></script>
+</body>
+
+</html>
+<!-- You will have one section (<div>) for each math operation (so 3 sections) total
+    Each section has two inputs to take the first and second numbers
+    Each section will have a button to perform the operation
+    You will inject the result into the HTML (not an alert)
+    Your website will have 3 colors
+    Your website will have proper padding/spacing to lay things out nicely -->

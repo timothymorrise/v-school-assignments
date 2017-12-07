@@ -1,0 +1,61 @@
+
+
+
+body {
+    margin: auto;
+    width: 100vw;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+#wrapper {
+    width: 80%;
+    margin: auto;
+}
+
+.title {
+    font-size: 1em;
+    color: white;
+    position: relative;
+    top: 0;
+    background-color: #343f37;
+}
+
+h1 {
+    position: relative;
+    top: 0;
+    margin-left: 10%;
+    letter-spacing: 2px;
+}
+
+h3 {
+    display: inline-block;
+    margin: .35em;
+    font-size: 1.5em
+}
+
+p {
+    font-size: 1.5em;
+    display: inline-block;
+    width: .8em;
+    text-align: center
+
+}
+
+button {
+    margin: .5em;
+    font-size: 1em;
+}
+
+input {
+    width: 8em;
+    height: 2em;
+    font-size: 1.2em;
+}
+
+#clear {
+    height: 2.5em;
+    text-align: left;
+    font-size: 1em;
+    margin-left: 0;
+}
