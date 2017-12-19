@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MPC Bill Caclulator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo:900" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="banner"></div>
+    <div class="title">
+        <h1>Mario's Pest Control Bill Calculator</h1>
+    </div>
+    <div class="bill">
+        <div class="badguy" id="goomba">
+            <h2 class="badguy_name">Goomba</h2>
+            <img src="http://vignette1.wikia.nocookie.net/mario/images/f/f3/Goomba_Art_%28Super_Mario_Bros.%29.png/revision/latest?cb=20121201194934">
+            <div class="list_wrapper">
+                <div class="price_wrapper">
+                    <h3 class=" price" id="goomba_price"></h3>
+                    <img class="coin" src="https://vignette4.wikia.nocookie.net/nintendo/images/9/9b/Artwork_-_COIN.svg/revision/latest?cb=20160218014222&path-prefix=en">
+                </div>
+                <h3 class="quantity_txt">Quantity</h3>
+                <input id="goomba_quantity" type="number" value="7" min="0">
+                <div class="subtotal_wrapper">
+                    <h3 class="subtotal" id="goomba_subtotal"></h3>
+                    <img class="coin" src="https://vignette4.wikia.nocookie.net/nintendo/images/9/9b/Artwork_-_COIN.svg/revision/latest?cb=20160218014222&path-prefix=en">
+                </div>
+            </div>
+        </div>
+        <div class="badguy" id="bobomb">
+            <h2 class="badguy_name">Bob-omb</h2>
+            <img src="http://vignette3.wikia.nocookie.net/mario/images/8/81/Bob-omb_Artwork_-_Super_Mario_Bros._2.png/revision/latest?cb=20120513171653">
+            <div class="list_wrapper">
+                <div class="price_wrapper">
+                    <h3 class="price" id="bobomb_price"></h3>
+                    <img class="coin" src="https://vignette4.wikia.nocookie.net/nintendo/images/9/9b/Artwork_-_COIN.svg/revision/latest?cb=20160218014222&path-prefix=en">
+                </div>
+                <h3 class="quantity_txt">Quantity</h3>
+                <input id="bobomb_quantity" type="number" value="8" min="0">
+                <div class="subtotal_wrapper">
+                    <h3 class="subtotal" id="bobomb_subtotal"></h3>
+                    <img class="coin" src="https://vignette4.wikia.nocookie.net/nintendo/images/9/9b/Artwork_-_COIN.svg/revision/latest?cb=20160218014222&path-prefix=en">
+                </div>
+            </div>
+        </div>
+        <div class="badguy">
+            <h2 class="badguy_name">Cheep Cheep</h2>
+            <img src="https://vignette.wikia.nocookie.net/mario/images/e/e9/Cheep-Cheep_Art_%28Super_Mario_Bros.%29.png/revision/latest?cb=20121201195020">
+            <div class="list_wrapper">
+                <div class="price_wrapper">
+                    <h3 class="price" id="cheep_price"></h3>
+                    <img class="coin" src="https://vignette4.wikia.nocookie.net/nintendo/images/9/9b/Artwork_-_COIN.svg/revision/latest?cb=20160218014222&path-prefix=en">
+                </div>
+                <h3 class="quantity_txt">Quantity</h3>
+                <input id="cheep_quantity" type="number" value="5" min="0">
+                <div class="subtotal_wrapper">
+                    <h3 class="subtotal" id="cheep_subtotal"></h3>
+                    <img class="coin" src="https://vignette4.wikia.nocookie.net/nintendo/images/9/9b/Artwork_-_COIN.svg/revision/latest?cb=20160218014222&path-prefix=en">
+                </div>
+            </div>
+        </div>
+        <div class="total_line">
+            <h2 id="total"></h2> <img id="total_coin" class="coin" src="https://vignette4.wikia.nocookie.net/nintendo/images/9/9b/Artwork_-_COIN.svg/revision/latest?cb=20160218014222&path-prefix=en">
+        </div>
+    </div>
+    <div class="footer">
+        <a class="foot">Email Mario: Mario@noa.nintendo.com</a>
+        <a href="https://www.youtube.com/watch?v=LB_YWGuYGn4" class="foot">mariopestcontrol.squarespace.com</a>
+        <a class="foot">Mario Bros. House, 13 Plitzgasse Way, Mushroom Kingdom 90852</a>
+
+
+    </div>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
+<!-- A list displaying each baddie by type. Each list item must:
+Have baddie image
+Have baddie name
+Show total caught of that type
+Show total price of that type
+
+A total price at the bottom that adds sums the total cost of baddies caught
+(must use Javascript for this math - no hard coded values)
+A footer showing:
+Mario's email address
+Mario's company website url
+Mario's physical address
+
+A large title at the top of the page entitled "Mario Pest Control"
+Passing Criteria: Visual Inspection by Instructor
+Student demonstrated a solid understanding with the following levels of the skills tree:
+
+Static Websites, Level 1
+CSS Selectors
+Colors in CSS
+Fonts in CSS
+Using external CSS stylesheets and JavaScript files
+Deployment, Level 1
+Opening an HTML document in browser -->

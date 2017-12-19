@@ -1,0 +1,233 @@
+body {
+    margin: auto;
+    height: 100vh;
+}
+
+
+.title {
+    text-align: center;
+    font-family: 'Exo', sans-serif;
+    font-size: 32px;
+    background-color: #51ba72;
+
+}
+
+h1 {
+    margin: 0;
+}
+
+.bill {
+    position: relative;
+    display: block;
+    font-family: 'Press Start 2P', cursive;
+    
+}
+
+.bill::after {
+    content: "";
+    background-image: url("very-good-mushroom-pattern.png");
+
+    opacity: .2;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -2;
+    background-size: cover;
+    
+}
+
+.badguy_name {
+    font-size: 3em;
+    margin-top: 0em;
+    padding-top: .5em;
+}
+
+.badguy {
+    padding-left: 25%;
+    border-bottom: 3px dashed black;
+}
+
+
+img {
+    height: auto;
+    width: 19em;
+    float: left;
+    padding-right: 2em;
+}
+
+.price_wrapper {
+    margin: 0;
+}
+
+h3.price {
+    font-size: 2.5em;
+    display: inline-block;
+    margin-bottom: 1em;
+
+}
+
+.coin {
+    width: 3.2em;
+    height: 3.2em;
+    float: none;
+    display: inline;
+}
+
+input {
+    display: inline;
+    font-size: 2em;
+    width: 4em;
+    transform: translateY(-.3em);
+}
+
+
+h3 {
+    font-size: 2.5em;
+}
+
+.subtotal_wrapper {
+    display: block;
+}
+
+.subtotal {
+    display: inline-block;
+}
+
+.quantity_txt {
+    display: inline-block
+}
+
+.total_line {
+    margin-top: 0;
+    height: 5em;
+
+}
+
+.total_line::after {
+    content: "";
+    background-color: green;
+    opacity: .2;
+    position: absolute;
+    height: 5em;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background-size: 100%;
+}
+
+#total {
+    width: 75%;
+    margin-top: 0;
+    padding-top: .6em;
+    margin-bottom: .5em;
+    text-align: right;
+    font-size: 3em;
+    display: inline-block;
+}
+
+.footer {
+    margin: auto;
+    text-align: center;
+    background-color: #51ba72;
+    font-family: 'Exo', sans-serif; 
+}
+
+.foot {
+    display: inline-block;
+    margin: 2%;
+    color: black;
+    text-decoration: none;
+}
+
+@media (max-width: 1250px) {
+    .badguy {
+        padding-left: 15%;
+    }
+}
+
+
+@media (max-width: 1100px) {
+    #total {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 950px) {
+    img {
+        display: block;
+        float: none;
+        margin: 10%;
+    }
+    .coin {
+        display: inline;
+        width: 2.5em;
+        height: 2.5em;
+        margin: 0
+}
+
+@media (max-width: 780px) {
+    .subtotal {
+        font-size: 1.6em;
+       
+     } 
+     .coin {
+        display: inline;
+        width: 2.5em;
+        height: 2.5em;
+    }
+}
+
+
+@media (max-width: 650px) {
+    #total {
+        font-size: 1.5em;
+    }
+    .coin {
+        display: inline;
+        width: 2.5em;
+        height: 2.5em;
+    }
+    .subtotal_wrapper {
+        display: block;
+    }
+    .badguy {
+        padding-left: 10%;
+        }
+    }
+    .quantity_txt {
+        font-size: 1.4em;
+    }
+    #total {
+        width: 80%;
+    }
+    #total_coin {
+        height: 2em;
+        width: 2em;
+    }
+    .total_line {
+        height: 3em;
+    }
+    .total_line::after {
+        height: 3em;
+    }
+}
+
+@media (max-width: 450px) {
+    img {
+        margin-left: 5%;
+    }
+    .price_wrapper {
+        text-align: center;
+        font-size: .8em;
+    }
+    .subtotal {
+        font-size: 1.5em;
+    }
+    #total {
+        font-size: 1.2em;
+    }
+}

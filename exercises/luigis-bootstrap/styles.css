@@ -1,0 +1,54 @@
+@font-face {
+    font-family: SuperMario;
+    src: url(SuperMario256.ttf);
+}
+
+body {
+    font-family: SuperMario;
+    color: red;
+}
+
+.luigi {
+    background-color: gold;
+    
+}
+
+.luigi_image {
+    background-color: red;
+}
+
+#luigi {
+    padding-left: 30px;
+}
+
+#luigi_img {
+    padding: 20px;
+    width: 250px;
+}
+
+.about_luigi {
+    color: red;
+}
+
+h1 {
+    padding-top: 20px;
+}
+
+
+
+h3 {
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.mushroom {
+    background-color: gold;
+    text-align: right;
+}
+
+#mushroom {
+    width: 60px;
+    padding: 5px;
+
+}

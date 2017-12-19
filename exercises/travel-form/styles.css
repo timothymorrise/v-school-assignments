@@ -1,0 +1,38 @@
+body {
+    background-color: skyblue
+}
+.wrapper {
+    display: flex;
+    justify-content: center;
+
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 550px;
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.section_2 {
+    width: 370px;
+}
+
+.destination {
+    margin-left:;
+}
+
+
+
+button {
+    width: 20%;
+    margin: auto;
+}
+
+ 
