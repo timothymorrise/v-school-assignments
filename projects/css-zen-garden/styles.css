@@ -1,17 +1,64 @@
+@font-face {
+    font-family: "linkyfont";
+    src: url("./fonts/verdemoderna.woff") format("woff");
+}
+.author {
+}
+
+.container {
+    border-top: solid 10px #264648;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+}
+
+.download {
+    display: none;
+}
+
+.footerlink{
+    text-decoration: none;
+    color: 	#8FA1A5;
+    font-size: 2em;
+}
+
+#github:hover {
+    content: G;
+}
+
 .header {
+    display: flex;
+    flex-direction: column;
     content: "";
     background-image: url("contours@2x.png"), url("huntington.jpg");
-    height: 300px; 
+    height: 240px;
     background-attachment: fixed, scroll;
     background-position: 0 0, 0 50%;
     background-repeat: repeat, no-repeat;
-    background-size: 50% auto, cover;
-    grid-area: header;
+    background-size: cover, cover;
     margin: 0;
 
 }
 
+h1 {
+    font-family: 'Julius Sans One', sans-serif;
+    color: white;
+}
+
+h2 {
+    font-family: 'Libre Baskerville', serif;
+    color: silver;
+    font-style: italic;
+}
+
+h3 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.8em;
+    color: darkslategray;
+}
 .header1 {
+    border-top: 3px solid #234447
     color: white;
 }
 /* .enso {
@@ -22,65 +69,86 @@
 
 
 .intro {
-    grid-area: intro;
+    display: flex;
+    flex-direction: column;
+    
 }
 
 #lg-designs {
-    grid-area: lg-designs;
+    display: none;
 }
 
 .parti {
-    grid-area: parti;
+    display: flex;
+    flex-direction: column;
 }
 
 #lg-site_map {
-    grid-area: lg-site-map;
+    display: none;
 }
+p {
+    font-family: 'Libre Baskerville', serif;
+    color: darkslategray
+}
+
 
 .reqs {
-    grid-area: reqs;
+    display: flex;
+    flex-direction: column;
 }
 
-.author {
-    grid-area: author;
+.section {
+    padding-left: 10%;
+    padding-top: 70px;
 }
 
 .links {
-    grid-area: links;
+    display: flex;
+    flex-direction: row;
+    font-family: "linkyfont";
+    height: 125px;
+    justify-content: center;
+    background-color: #204146
+}
+
+.linkbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 125px;
+    width: 254px;
+
 }
 
 #md-designs {
-    display: none;
-    grid-area: md-designs;
+    display: flex;
 }
 
 #md-site_map {
-    display: none;
-    grid-area: md-site_map;
+    display: flex;
 }
 
-.container {
-    display: grid;
-    width: 100%;
-    grid-gap: 0;
-    grid-template-columns: 66% 34%;
-    grid-template-rows: auto;
-    grid-template-areas: 
-        "header header"
-        "intro lg-designs"
-        "parti lg-site-map"
-        "reqs ."
-        "author author"
-        "links links"
-        "md-designs md-designs"
-        "md-site_map md-site_map"
-}
-@media (max-width: 1131px) {
-    .header {
-        background-image: url("contours@2x.png"), url("huntington.jpg");
-        background-size: auto,  
+
+@media (min-width: 500px) {
+   .download {
+       display: block;
+   }
+   
+    .footerlink {
+       font-size: 3em;
+   }
+
+   .header {
+       height: 220px;
+   }
+    .linkbar {
+        width: 450px;
     }
 
+
+}
+
+@media (min-width: 1132px) {
     .container {
         display: flex;
         flex-direction: column;
@@ -88,24 +156,94 @@
         grid-gap: 0;
 
     }
+
+    .download {
+
+    }
+
+   .footerlink {
+       font-size: 4.5em;
+   }
+    .header {
+        background-image: url("contours@2x.png"), url("huntington.jpg");
+        display: flex;
+        flex-direction: row;
+        height: 300px;
+        background-attachment: fixed, scroll;
+        background-position: 0 0, 0 50%;
+        background-repeat: repeat, no-repeat;
+        background-size: 50% auto, cover;
+    }
+    
+    .header1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 66%;
+    }
+    
+    .header2 {
+        display: flex;
+        width: 30%;
+    }
+
+    .intro {
+        display: flex;
+        width: 66%;
+    }
+    .links {
+        display: flex;
+        flex-direction: row;
+        height: 175px;
+        justify-content: center;
+    }
+    .linkbar {
+        display: flex; 
+        flex-direction: row;
+        width: 780px;
+        height: 100%;
+    }
+
     #lg-designs {
-        display: none;
-        grid-area: lg-designs;
+        display: flex;
+        width: 34%;
     }
 
     
     #lg-site_map {
-        display: none;
-        grid-area: lg-site-map;
+        display: flex;
+        width: 34%;
     }
     #md-designs {
-        display: flex;
-        grid-area: md-designs;
+        display: none;
     }
     
     #md-site_map {
+        display: none;
+    }
+
+    .reqs {
         display: flex;
-        grid-area: md-site_map;
+        width: 66%;
+    }
+    .row1 {
+        display: flex;
+        flex-direction: row;
+    }
+    .row2 {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .row3 {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    .parti {
+        display: flex;
+        width: 66%;
     }
 }
 

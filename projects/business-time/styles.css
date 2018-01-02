@@ -1,0 +1,222 @@
+
+
+article {
+    margin: 15px;
+}
+.banner {
+    background-image: url("banner-image.jpeg");
+    background-size: cover;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-shadow: 4px 4px black;
+}
+
+.banner-title {
+    color: white;
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.bio {
+    background-color: #bfbfbf;
+    display: flex;
+    justify-content: center;
+}
+
+.containerer {
+    background: linear-gradient(to right, #98ff98, black, #f2d0e7 );
+    background-size: auto;
+    background-position: auto;
+    position: relative;
+    top: 250px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    
+}
+
+#ep-28 {
+    background-image: url("ep-28-back.jpeg");
+    background-size: cover
+}
+
+#ep-27 {
+    background-image: url("ep-27-back.jpeg");
+    background-size: cover;
+}
+#ep-26 {
+    background-image: url("ep-26-back.jpeg");
+    background-size: cover;
+}
+#ep-25 {
+    background-image: url("ep-25-back.jpeg");
+    background-size: cover;
+}
+#ep-24 {
+    background-image: url("ep-24-back.jpeg");
+    background-size: cover;
+}
+#ep-23 {
+    background-image: url("ep-23-back.jpeg");
+    background-size: cover;
+}
+#ep-22 {
+    background-image: url("ep-22-back.jpeg");
+    background-size: cover;
+}
+#ep-21 {
+    background-image: url("ep-21-back.jpeg");
+    background-size: cover;
+}
+#ep-20 {
+    background-image: url("ep-20-back.jpeg");
+    background-size: cover;
+}
+
+h3 {
+    margin: 9px;
+}
+
+.footerbiz {
+    margin: 10px;
+}
+.header {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    z-index: 1
+}
+
+footer {
+    position: relative;
+    top: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.links {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #404040;
+}
+
+.imgholder {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.imglinks {
+    height: 50px;
+    width: auto;
+}
+
+.normalwords {
+    width: 75%;
+    height: 50em;
+    margin: auto;
+    background-color: white;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+    width: 300px;
+    border: 10px double black;
+    margin: 15px;
+    background: white;
+    color: white;
+    text-shadow: 0px 0px 10px black;
+}
+
+.subscribe-button {
+    width: 200px;
+}
+
+video {
+
+    width: 280px;
+}
+
+@media (max-width: 500px) {
+    .footerbiz {
+        font-size: 1em;
+    }
+}
+@media (min-width: 900px) {
+    .banner {
+        height: 250px;
+    }
+    .banner-title {
+        font-size: 2.5em;
+        margin-bottom: 25px
+    }
+    .containerer {
+        position: static;
+    }
+    footer{
+        position: static;
+    }
+    .header {
+        position: static;
+    }
+    
+   
+}
+
+@media (min-width: 1000px) {
+    .banner {
+        height: 300px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .banner {
+        height: 330px;
+    }
+    .banner-title {
+        font-size: 3em;
+    }
+}
+
+@media (min-width: 1123px) {
+    .banner::before {
+        background: linear-gradient(to right, #f2d0e7, black, #98ff98);
+        content: "";
+        display: block;
+        height: 330px;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+
+    .banner {
+        background-image: url("banner-image.jpeg");
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position-x: center;
+    }   
+}
+
+@media (min-width: 1316px) {
+    .containerer {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+@media (min-width: 1650px) {
+    .containerer {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+}

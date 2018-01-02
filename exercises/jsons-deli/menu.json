@@ -1,0 +1,83 @@
+{
+    "appetizers": [
+        {
+            "name": "Yum and Drummers",
+            "ingredients": [
+                "pickles",
+                "batter",
+                "butter",
+                "hope"
+            ],
+            "description": "We don't know how these are made. We sling them in the back and they just turn out. No one has died yet."
+        },
+        {
+            "name": "True cheese fries",
+            "ingredients": [
+                "cheese",
+                "an empty potoato",
+                "emersive heat"
+            ],
+            "description": "these are literally just fried cheese"
+        }
+    ],
+    "coldSandwiches": [
+        {
+            "name": "The Shimmy Shake",
+            "ingredients": [
+                "yesterday's dinner rolls",
+                "turkey from a can",
+                "butter lettuce strands"
+            ],
+            "description": "Not actually a Shake! Just a good group of foods hanging out."
+        },
+        {
+            "name": "The Round n' Roudy",
+            "ingredients": [
+                "Marble Rye Bread",
+                "A willing animal sacrifice",
+                "Mayo"
+            ],
+            "description": "A true American Hero, if Heros still existed in this modern day."
+        }
+    ],
+    "hotSandwiches": [
+        {
+            "name": "A Good Time",
+            "ingredients": [
+                "Subway Brand Italian Herbs and Cheese Bread",
+                "a very Giving slice of Pastrami",
+                "pasterized Snake Oil"
+            ],
+            "description": "This is the sandwhich that eyed you from across the room and made you say 'eh, I'll settle'."
+        },
+        {
+            "name": "Chicken Doing Something Important",
+            "ingredients": ["Chicken", "A meek white bread", "lots of Orange Chicken sauce"],
+            "description": "Watch it go."
+        }
+    ],
+    "desserts": [
+        {
+            "name": "Cake From The Lake",
+            "ingredients": ["Mystery berries", "wheat flour", "sugarspice", "cake fixins"],
+            "description": "Legendary cake, found by the Legndary King Arthur. He pulled it out of a lake after he did the stuff wit that sword."
+        },
+        {
+            "name": "A Normal Ice Cream Cookie",
+            "ingredients": ["a cookie", "some normal-ass ice cream"],
+            "description": "We're not Playing. Look. It's just chocalate chip and vanilla and everything. $2.50"
+        }
+    ],
+    "drinks": [
+        {
+            "name": "Soda Feelings",
+            "ingredients": ["a blend of 15 different secret recipes all at once", "cocaine substitute"],
+            "description": "Eating your feelings is so 2015. Just drink them instead."
+        },
+        {
+            "name": "Blood of my enemies.",
+            "ingredients": ["rasberries", "Minute-Maid light"],
+            "description": "Not actually blood, but we got your enemies to each say something nice about you and whisper it into the drink before we bottled it."
+        }
+    ]
+}
