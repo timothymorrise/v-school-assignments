@@ -1,3 +1,4 @@
+rs = require("readline-sync")
 
 let cipher = (str, shift) => {
     let output = "";
@@ -11,5 +12,9 @@ let cipher = (str, shift) => {
     }
     return output
 }
-console.log(cipher("zyx", 3));
+
+let string = rs.question("Please enter your string: ");
+let shiftStr = rs.question("Please enter a number: ")
+let shift = Number(shiftStr)
+console.log("Your Ciphered String: " + cipher(string, shift));
 
