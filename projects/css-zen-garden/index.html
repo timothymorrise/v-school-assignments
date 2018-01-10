@@ -27,14 +27,20 @@
             </div>
 
             <div class="header2">
-                <h3 class="subheader">view all designs</h3>
+                <div class="subtitle-container">
+                    <h3 class="subheader">view all designs</h3>
+
+                </div>
+                <div class="arrow-container">
+                    <h3 id="arrow">></h3>
+                </div>
             </div>
 
         </header>
         <div class="main">
             <div class="row">
                 <div class="intro section">
-                    <div>
+                    <div class="subsection">
                         <p>A demonstration of what can be accomplished through CSS-based design. Select any style sheet from
                             the list to load it into this page.</p>
                         <p class="download">Download the example
@@ -43,8 +49,8 @@
                         </p>
                     </div>
 
-                    <div>
-                        <h3>THE ROAD TO ENLIGHTENMENT</h3>
+                    <div class="subsection">
+                        <h3 class="lil-header">THE ROAD TO ENLIGHTENMENT</h3>
                         <p>Littering a dark and dreary road lay the past relics of browser-specific tags, incompatible DOMs,
                             broken CSS support, and abandoned browsers.</p>
                         <p>We must clear the mind of the past. Web enlightenment has been achieved thanks to the tireless efforts
@@ -53,8 +59,8 @@
                             to see with clarity. Learn to use the time-honored techniques in new and invigorating fashion.
                             Become one with the web.</p>
                     </div>
-                    <div>
-                        <h3>SO WHAT IS THIS ABOUT?</h3>
+                    <div class="subsection">
+                        <h3 class="lil-header">SO WHAT IS THIS ABOUT?</h3>
                         <p> There is a continuing need to show the power of CSS. The Zen Garden aims to excite, inspire, and
                             encourage participation. To begin, view some of the existing designs in the list. Clicking on
                             any one will load the style sheet into this very page. The HTML remains the same, the only thing
@@ -67,10 +73,10 @@
                 </div>
 
             </div>
-            <div class="row">
+            <div class="row bamboo">
                 <div class="parti section">
-                    <div>
-                        <h3>PARTICIPATION</h3>
+                    <div class="subsection">
+                        <h3 class="lil-header">PARTICIPATION</h3>
                         <p> Strong visual design has always been our focus. You are modifying this page, so strong CSS skills
                             are necessary too, but the example files are commented well enough that even CSS novices can
                             use them as starting points. Please see the CSS Resource Guide for advanced tutorials and tips
@@ -85,8 +91,8 @@
                             it and place it on our server.
                         </p>
                     </div>
-                    <div>
-                        <h3> BENEFITS</h3>
+                    <div class="subsection">
+                        <h3 class="lil-header"> BENEFITS</h3>
                         <p> Why participate? For recognition, inspiration, and a resource we can all refer to showing people
                             how amazing CSS really can be. This site serves as equal parts inspiration for those working
                             on the web today, learning tool for those who will be tomorrow, and gallery of future techniques
@@ -97,8 +103,8 @@
             </div>
             <div class="row">
                 <div class="reqs section">
-                    <div>
-                        <h3>REQUIREMENTS</h3>
+                    <div class="subsection">
+                        <h3 class="lil-header">REQUIREMENTS</h3>
                         <p> Where possible, we would like to see mostly CSS 1 & 2 usage. CSS 3 & 4 should be limited to widely-supported
                             elements only, or strong fallbacks should be provided. The CSS Zen Garden is about functional,
                             practical CSS and not the latest bleeding-edge tricks viewable by 2% of the browsing public.
@@ -122,7 +128,18 @@
             </div>
         </div>
         <footer class="footer">
-            <div class="author">By Dave Shea. Bandwidth graciously donated by mediatemple. Now available: Zen Garden, the book.
+            <div class="author">
+                <div class="author_text">
+                    <h3 class="authorship">
+                        <span class="first-thing">By</span>
+                        <span class="second-thing">Dave Shea.</span>
+                        <span class="first-thing">Bandwidth graciously donated by</span>
+                        <span class="second-thing">mediatemple.</span>
+
+                        <span class="first-thing"> Now available:</span>
+                        <span class="second-thing">Zen Garden, the book.</span>
+                    </h3>
+                </div>
             </div>
             <div class="links">
                 <div class="linkbar">
@@ -135,15 +152,58 @@
             </div>
         </footer>
         <aside class="sidebar">
-            <div class="designs">MID CENTURY MODERN by Andrew Lohman GARMENTS by Dan Mall STEEL by Steffen Knoeller APOTHECARY by Trent Walton
-                SCREEN FILLER by Elliot Jay Stocks FOUNTAIN KISS by Jeremy Carlson A ROBOT NAMED JIMMY by meltmedia VERDE
-                MODERNA by Dave Shea
+            <div class="designs">
+                <div class="design">
+                    <h4>MID CENTURY MODERN</h4>
+                    <p>
+                        <span class="by">by</span> Andrew Lohman</p>
+                </div>
+                <div class="design">
+                    <h4>GARMENTS</h4>
+                    <p>
+                        <span class="by">by</span> Dan Mall</p>
+                </div>
+                <div class="design">
+                    <h4>STEEL</h4>
+                    <p>
+                        <span class="by">by</span> Steffen Knoeller</p>
+                </div>
+                <div class="design">
+                    <h4>APOTHECARY</h4>
+                    <p>
+                        <span class="by">by</span> Trent Walton</p>
+                </div>
+                <div class="design">
+                    <h4>SCREEN FILLER</h4>
+                    <p>
+                        <span class="by">by</span> Elliot Jay Stocks</p>
+                </div>
+                <div class="design">
+                    <h4>FOUNTAIN KISS</h4>
+                    <p>
+                        <span class="by">by</span> Jeremy Carlson</p>
+                </div>
+                <div class="design">
+                    <h4>A ROBOT NAMED JIMMY</h4>
+                    <p>
+                        <span class="by">by</span> meltmedia</p>
+                </div>
+                <div class="design">
+                    <h4>VERDE MODERNA</h4>
+                    <p>
+                        <span class="by">by</span> Daivd Shea</p>
+                </div>
             </div>
             <div class="site_map">
-                VIEW THIS DESIGN’S CSS CSS RESOURCES FAQ SUBMIT A DESIGN TRANSLATIONS
-            </div>
+                <div>
+                    <h4>VIEW THIS DESIGN’S CSS</h4>
+                    <h4>CSS RESOURCES</h4>
+                    <h4>FAQ</h4>
+                    <h4>SUBMIT A DESIGN </h4>
+                    <h4>TRANSLATIONS</h4>
+                </div>
         </aside>
-    </div>
+        </div>
     </div>
 </body>
 
