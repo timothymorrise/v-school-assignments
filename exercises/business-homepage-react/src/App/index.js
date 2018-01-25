@@ -1,8 +1,13 @@
+//APP
+
 import React, { Component } from "react";
+
 import Nav from "./Nav";
 import Info from "./Info";
 import List from "./List";
 import Footer from "./Footer";
+
+import "./index.css"
 
 function App(props) {
     let links = [
@@ -19,15 +24,16 @@ function App(props) {
             name: "Contact"
         }
     ];
-    let parentStyle = {
-        backgroundColor: "fuschia"
-    }
     return (
         <div className="app-wrapper">
-            <Nav links={links} parentStyle={parentStyle} ></Nav>
-            <h1>welcome to this sweet pea
-        </h1>
-            <h2>this true is {props.name}</h2>
+            <header>
+                <h1>Welcome to {props.name}</h1>
+                <Nav links={links} />
+            </header>
+
+            <Info />
+            <List />
+            <Footer />
         </div>
     )
 }

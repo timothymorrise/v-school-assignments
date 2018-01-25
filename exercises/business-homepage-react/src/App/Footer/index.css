@@ -1,0 +1,23 @@
+/* FOOTER -- CSS */
+/* ------------------------------ */
+
+footer {
+    align-items: center;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    justify-content: space-around;
+}
+
+footer > a {
+    color: white;
+    font-size: .8em;
+    text-decoration: none;
+}
+
+@media (min-width: 900px) {
+    footer > a {
+        font-size: 1.2em;
+    }
+}

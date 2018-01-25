@@ -1,0 +1,60 @@
+/* HEADER */
+/* ------------------------------ */
+
+header::before {
+    background-image: url("https://blackrockdigital.github.io/startbootstrap-clean-blog/img/home-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    content: "";
+    height: 445px;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+
+}
+
+header {
+    align-items: center;
+    background-color: rgba(33, 37, 41, 0.5);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 445px;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+    
+}
+
+.header-titles {
+    align-items: center;
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.header-titles > h1 {
+    font-weight: 800;
+    font-size: 3em;
+}
+
+.header-titles > h3 {
+    font-size: 1.45em;
+    font-weight: 300;
+}
+
+@media (min-width: 776px) {
+    header::before {
+        height: 532px;
+    }
+    
+    header {
+        height: 532px;  
+    }
+
+    .header-titles > h1{
+        font-size: 5em;
+    }
+}
+
+

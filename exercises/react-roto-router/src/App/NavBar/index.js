@@ -1,14 +1,18 @@
-import React, { Component } from 'react'
-import {Link} from "react-router-dom"
+// NAVBAR -- SRC
+// ------------------------------
 
-export default class Navbar extends Component {
-    render() {
-        return (
-            <div>
-                <Link to="/">Home</Link>
-                <Link to="/about">About</Link>
-                <Link to="/services">Services</Link>
-            </div>
-        )
-    }
+import React from 'react'
+
+import { Link } from "react-router-dom";
+
+function Navbar() {
+    return (
+        <nav>
+           <Link to="/">Home</Link>
+           <Link to="/about">About</Link>
+           <Link to="services">Services</Link> 
+        </nav>
+    )
 }
+
+export default Navbar

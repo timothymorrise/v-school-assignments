@@ -1,0 +1,21 @@
+/* INFO -- CSS */
+/* -------------------------------- */
+
+.info {
+    
+    color: grey;
+    text-decoration: italic;
+    margin: 30px;
+}
+
+.info-wrapper {
+    background-color: rgb(174, 206, 174)
+}
+
+.info > h3 {
+    margin-bottom: 5px;
+}
+
+.info > p {
+    margin-left: 9px;
+}

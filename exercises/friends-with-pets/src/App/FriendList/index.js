@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Friend from "./Friend"
+import "./index.css"
 
 class FriendList extends Component {
     constructor(props) {
@@ -66,7 +67,7 @@ class FriendList extends Component {
             }
         ]
         return (
-            <div>
+            <div className="friend-list-wrapper">
             {friends.map( (friend) =>
                 <Friend friend={friend}></Friend>
             )}

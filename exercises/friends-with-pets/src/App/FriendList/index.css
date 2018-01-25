@@ -1,0 +1,8 @@
+/* FRIEND LIST */
+
+.friend-list-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+}

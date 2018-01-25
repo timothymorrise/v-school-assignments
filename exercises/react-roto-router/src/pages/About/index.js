@@ -1,11 +1,14 @@
-import React, { Component } from 'react'
+// ABOUT - COMPONENT
+// ------------------------------
 
-export default class About extends Component {
-    render() {
-        return (
-            <div>
-                about what
-            </div>
-        )
-    }
+import React from 'react'
+
+function About() {
+    return (
+        <div>
+            About Test
+        </div>
+    )
 }
+
+export default About

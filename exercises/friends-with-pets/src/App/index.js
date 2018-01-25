@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import FriendList from "./FriendList"
 
+import "./index.css"
+
 class App extends Component {
     constructor(props) {
         super(props);
@@ -9,7 +11,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <div className="app-wrapper">
                  <FriendList> </FriendList>      
             </div>
         )

@@ -1,0 +1,60 @@
+/* BLOG LIST -- CSS */
+/* ------------------------------ */
+
+main {
+    align-items: center;
+    background: white;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.blog-list-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-list-older-posts {
+    align-self: flex-end;
+    align-items: center;
+    background-color: #0085a1;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    font-size: .9em;
+    font-weight: 800;
+    height: 54px;
+    justify-content: center;
+    margin-bottom: 17px;
+    margin-top: 17px;
+    width: 176px;
+}
+
+.blog-list-older-posts:hover {
+    background-color: #005B70;
+    cursor: pointer;
+}
+
+@media (min-width: 576px) {
+    .blog-list-wrapper {
+        width: 510px;
+    }
+}
+
+@media (min-width: 768px) {
+    .blog-list-wrapper {
+        width: 570px;
+    }
+}
+@media (min-width: 992px) {
+    .blog-list-wrapper {
+        width: 610px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .blog-list-wrapper {
+        width: 727px;
+    }
+}

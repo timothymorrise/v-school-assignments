@@ -52,6 +52,8 @@
 }
 .by {
     font-size: 1em;
+    margin-left: 15px;
+    color: #c2cac4
 }
 .page-wrapper {
     border-top: solid 10px #264648;
@@ -65,6 +67,17 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    background: #e7ede9
+    
+}
+.design {
+    border-bottom: 1px #dbe3dd solid;
+    margin-bottom: 24x;
+    margin-top: 23px;
+    margin-left: 50px;
+}
+.design-author{
+    color: #626758
 }
 .download {
     display: none;
@@ -203,8 +216,29 @@ p {
     background-repeat: repeat;
     background-attachment: scroll, fixed, fixed;
     background-size: cover, 40% auto, auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+.site-map-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    height: 190px;
+}
+.site-map-link{
+    border-bottom: 1px #2a753d75 solid;
+    font-size: 1.3em;
+    width: 50%
 
+}
+.site-map-link > h4 {
+    margin: 15px;
+}
 #titles {
     font-size: .9em;
     font-weight: 100;
@@ -256,6 +290,9 @@ p {
     .author {
         height: 320px;
     }
+    .by{
+        margin: 0
+    }
     h3 {
         font-size: 1.8em;
         margin-top: 10px;
@@ -280,7 +317,9 @@ p {
         width: 70px;
     }
     #arrow {
-        position: static;
+        position: absolute;
+        left: 35px;
+        top: 140px;
         width: 40px;
     }
     .page-wrapper {
@@ -288,6 +327,27 @@ p {
         flex-direction: column;
         flex-wrap: wrap;
         width: 100%;
+    }
+    .designs {
+        background: none;
+        height: 900px;
+        width: 320px;
+    }
+    .design {
+        margin-bottom: 5px;
+        width: 100%;
+    }
+    .design > p {
+        margin-bottom: 5px;
+    }
+    .design-title {
+        font-size: 1.1em;
+        width: 90%;
+        margin-bottom: 5px;
+    }
+    .design-author {
+        margin-top: 0px;
+
     }
     .download {}
     .enso {
@@ -373,8 +433,22 @@ p {
         flex-direction: column;
         background: none;
         position: absolute;
-        top: 800px
+        top: 950px;
+      
+        justify-content: center;
+        width: 100%;
     }
+    .site-map-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: nowrap;
+        width: 80%;
+    }
+   .site-map-link {
+       width: 70%;
+
+   }
     .sidebar {
         align-self: flex-end;
         order: 3;
@@ -411,61 +485,61 @@ p {
 
 @media (min-width: 1158px) {
     .header::after {
-        height: 2300px;
+        height: 2350px;
     }
 }
 
 @media (min-width: 1237px) {
     .site_map {
-        top: 760px;
+        top: 900px;
     }
 }
 
 @media (min-width: 1250px) {
     .header::after {
-        height: 2250px;
+        height: 2300px;
     }
 }
 
 @media (min-width: 1300px) {
     .header::after {
-        height: 2200px;
+        height: 2250px;
     }
 }
 
 @media (min-width: 1345px) {
     .site_map {
-        top: 730px;
+        top: 880px;
     }
 }
 
 @media (min-width: 1400px) {
     .header::after {
-        height: 2100px;
+        height: 2150px;
     }
 }
 
 @media (min-width: 1490px) {
     .site_map {
-        top: 700px;
+        top: 800px;
     }
 }
 
 @media (min-width: 1500px) {
     .header::after {
-        height: 2000px;
+        height: 2050px;
     }
 }
 
 @media (min-width: 1700px) {
     .header::after {
-        height: 1900px;
+        height: 1950px;
     }
 }
 
 @media (min-width: 1815px) {
     .site_map {
-        top: 680px;
+        top: 740px;
     }
 }
 

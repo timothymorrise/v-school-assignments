@@ -1,0 +1,27 @@
+[
+    {
+        "name": "All Might",
+        "imageURL": "https://fsb.zobj.net/crop.php?r=qUQA-Aloi7vEBz5pn8h8enlTtddcHaen-J6ad1M2KV6e-Upx6ArOPvbWJ-aObxc7BaNMMSg0obi43Ql84iT-Bdk3RrKA2_C_A8r-59-vPQLzTK3lrkDPQi4U_xZVExwRFcG7ogmhFiG3jAgWBfyVik1h86YblttFBG7_XQ",
+        "catchphrase": "PLUS ULTRA!"
+    },
+    {
+        "name": "Wonder Woman",
+        "imageURL": "https://thanley.files.wordpress.com/2014/06/wwidw.jpg",
+        "catchphrase": "Suffering Sappho!"
+    },
+    {
+        "name": "The Question",
+        "imageURL": "https://vignette.wikia.nocookie.net/batman/images/5/5c/The_Question-1.jpg/revision/latest?cb=20090306052828",
+        "catchphrase": "Please. I go through *everone's* trash."
+    },
+    {
+        "name": "Katya",
+        "imageURL": "https://i.pinimg.com/736x/e1/b5/6d/e1b56d9a6c0e8074c08f50cb0dc5dbbb--rupaul-drag-race.jpg",
+        "catchphrase": "I'm a mountain biking vampire witch from the future!"
+    },
+    {
+        "name": "Hellboy",
+        "imageURL": "https://pre00.deviantart.net/f3c5/th/pre/f/2008/334/4/8/hellbou_by_el_grimlock.jpg",
+        "catchphrase": "Son of a-"
+    }
+]

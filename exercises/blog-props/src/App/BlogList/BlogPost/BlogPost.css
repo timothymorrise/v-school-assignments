@@ -1,0 +1,41 @@
+/* BLOG POST -- CSS */
+/* ------------------------------ */
+
+article {
+    border-bottom: 1px solid #e5e5e5
+}
+
+article > p {
+    color: #a6abb1;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.15em;
+    margin-bottom: 31px;
+}
+
+.blog-post-author {
+    color: black;
+}
+
+.blog-post-link {
+    color: black;
+    text-decoration: none;
+}
+
+.blog-post-link:hover {
+    color: #0085a1
+}
+
+.blog-post-link > h1 {
+    font-size: 2.4em;
+    margin-bottom: 10px;
+    margin-top: 31px;
+
+}
+
+.blog-post-link > h2 {
+    font-size: 1.75em;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+

@@ -1,0 +1,15 @@
+.list-wrapper {
+    background: url("http://huskfoods.com//wp-content/uploads/2014/06/husk6.jpg");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+}

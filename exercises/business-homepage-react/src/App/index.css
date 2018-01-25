@@ -1,0 +1,32 @@
+/* APP */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    align-items: center;
+    background: url("https://cdn3.tmbi.com/toh/GoogleImagesPostCard/Dill---Chive-Peas_exps69263_TH2379801A07_06_4bC_RMS.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    justify-content: flex-end;  
+}
+
+header > h1{
+    bottom: 20%;
+    color: white;
+    font-size: 3em;
+    position: relative;
+    text-shadow: 2px 2px thistle  
+}

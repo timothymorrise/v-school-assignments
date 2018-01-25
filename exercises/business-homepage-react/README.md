@@ -8,4 +8,4 @@ Creat a simple webpage with the requirments of having a:
  - Images
  - A footer
 
- - not yet completed - 
+ 

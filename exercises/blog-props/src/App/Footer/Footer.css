@@ -1,0 +1,57 @@
+/* FOOTER */
+/* ------------------------------ */
+
+footer {
+    align-items: center;
+    background: white;
+    color: #7b838b;
+    display: flex;
+    flex-direction: column;
+    font-size: .85em;
+    justify-content: center;
+    font-family: 'Lora', serif;
+
+}
+
+.footer-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;;
+    width: 174px;
+}
+
+.footer-icon {
+    height: 48px;
+    width: 48px;
+}
+
+.footer-icon-facebook {
+    background-image: url("https://cdn3.iconfinder.com/data/icons/free-social-icons/67/facebook_circle_black-48.png"); 
+}
+.footer-icon-facebook:hover {
+    background-image: url("../../images/facebook-blue.png");
+}
+
+.footer-icon-github {
+    background-image: url("../../images/github-black.png");
+}
+.footer-icon-github:hover {
+    background-image: url("../../images/github-blue.png");
+}
+
+.footer-icon-twitter {
+    background-image: url("https://cdn3.iconfinder.com/data/icons/picons-social/57/43-twitter-48.png");
+}
+.footer-icon-twitter:hover {
+    background-image: url("../../images/twitter-blue.png");
+}
+
+.footer-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 105px;
+    margin-bottom: 66px;
+    margin-top: 65px;
+}

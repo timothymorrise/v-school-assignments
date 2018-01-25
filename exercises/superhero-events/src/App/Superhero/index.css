@@ -1,0 +1,10 @@
+.superhero {
+    height: 300px;
+    width: 300px;
+}
+
+.superhero-image {
+    background-size: cover;
+    height: 200px;
+    width: 200px;
+}

@@ -1,0 +1,23 @@
+/* HIT -- CSS */
+/* ------------------------------ */
+
+.hit {
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 30px;
+    height: 350px;
+    width: 250px
+}
+
+.hit > h1 {
+    background: rgba(0, 110, 255, .5);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}

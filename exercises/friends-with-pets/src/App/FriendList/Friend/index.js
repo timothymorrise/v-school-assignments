@@ -1,6 +1,8 @@
+//FRIEND
 import React, { Component } from 'react'
-import Pet from "./Pet";
 
+import Pet from "./Pet";
+import "./index.css"
 
 class Friend extends Component {
     constructor(props) {
@@ -9,7 +11,7 @@ class Friend extends Component {
     
     render() {
         return (
-            <div>
+            <div className="friend">
                 <h1>{this.props.friend.name}</h1>
                 <h2>{this.props.friend.age}</h2>
                 <ul>

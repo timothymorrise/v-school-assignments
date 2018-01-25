@@ -1,0 +1,20 @@
+/* FRIEND */
+
+.friend {
+    border: 2px solid black;
+    margin: 15px;
+    height: 250px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 10px;
+    background: thistle;
+}
+
+.friend > h1 {
+    align-self: center;
+}
+
+.friend > h1, h2 {
+    margin-left: 10px;
+}

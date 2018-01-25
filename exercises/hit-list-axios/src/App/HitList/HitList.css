@@ -1,0 +1,11 @@
+/* HIT LIST -- CSS */
+/* -------------------------------- */
+
+.hit-list-wrapper {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 75%;
+}

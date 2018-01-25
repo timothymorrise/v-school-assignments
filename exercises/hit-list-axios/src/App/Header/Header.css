@@ -1,0 +1,26 @@
+/* HEADER -- CSS */
+/* ------------------------------ */
+
+header {
+    align-items: center;
+    background-color: black;
+    color: red;
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    justify-content: flex-start;
+
+}
+
+header > h1 {
+    margin: 30px;
+}
+
+.header-image {
+    background-image: url("https://assets.rbl.ms/10572547/980x.gif");
+    background-size: contain;
+    background-repeat: none;
+    height: 100px;
+    width: 218px;
+}
+
