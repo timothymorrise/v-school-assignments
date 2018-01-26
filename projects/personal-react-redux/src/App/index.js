@@ -19,9 +19,11 @@ export default class App extends Component {
 
     // }
     
-    // componentDidMount() {
-    //     console.log("jimmy")
-    // }
+    componentDidMount() {
+        axios.get(mfURL)
+        .then()
+        .catch()
+    }
     
     render() {
         return (
