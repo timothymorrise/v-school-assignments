@@ -2,10 +2,15 @@
 // ------------------------------
 
 // IMPORTS
-const redux = require("redux");
+import {createStore, combineReducers, applyMiddleware } from "redux"
+import videoData from "./video-data"
+import thunk from "redux-thunk"
 
 // COMBINE REDUCERS
-const { createStore, combineReducers } = redux
-let store = createStore(combineReducers( { } ))
+let store = createStore(combineReducers( { videoData } ), applyMiddleware(thunk))
+
+
+// EXPORTS
+export default store
 
 

@@ -3,9 +3,9 @@
 
 // IMPORT PACKAGES
 const mongoose = require("mongoose")
-const { Schema, model }
+const { Schema, model } = mongoose
 
-// SCHEMA
+// SCHEMA 
 const inventorySchema = new Schema({
     name: {
         type: String,

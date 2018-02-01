@@ -6,9 +6,9 @@ import React, { Component } from 'react'
 export default class About extends Component {
     render() {
         return (
-            <div>
+            <main>
                 ABOUT TEST
-            </div>
+            </main>
         )
     }
 }

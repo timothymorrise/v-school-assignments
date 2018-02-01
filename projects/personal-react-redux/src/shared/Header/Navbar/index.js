@@ -9,7 +9,7 @@ export default class Navbar extends Component {
         return (
             <nav>
                 <Link to="/">Home</Link>
-                <Link to="/list">List</Link>
+                <Link to="/videos">List</Link>
                 <Link to="/about">About</Link>
             </nav>
         )
