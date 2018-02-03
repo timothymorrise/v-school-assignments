@@ -17,21 +17,9 @@ export default class App extends Component {
         }
     }
 
-    componentDidMount() {
-        axios.get(swURL)
-        .then( (response) => {
-            let { results } = response 
-
-        })
-        .catch( (err) => {
-            console.log(err)
-        })
-    }
-
     render() {
         return (
             <div>
-                test
                 <Sidebar />
                 <CharacterSwitch />
             </div>

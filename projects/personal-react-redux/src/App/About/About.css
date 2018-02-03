@@ -1,0 +1,12 @@
+/* ABOUT -- CSS */
+/* ============================== */
+
+.about {
+    margin: 20px;
+}
+
+.about > p {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+

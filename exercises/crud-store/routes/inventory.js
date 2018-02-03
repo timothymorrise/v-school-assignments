@@ -22,3 +22,4 @@ inventoryRoute.route("/:id")
     .put()
     .delete();
 // EXPORTS
+module.exports = inventoryRoute

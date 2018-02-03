@@ -1,0 +1,45 @@
+/* HEADER -- CSS */
+/* ============================== */
+
+header {
+    align-items: center;
+    background-color: hotpink;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.header-title {
+    text-align: center;
+    border-top: 9px double black;
+}
+
+.header-words {
+    display: flex;
+    flex-direction: column;
+}
+
+header > img {
+    height: 300px;
+}
+
+@media (min-width: 700px) {
+    header {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+    
+    .header-words {
+        order: 1;
+        width: 50%;
+    }
+
+    header > img {
+        height: auto;
+        order: 2;
+        width: 50%;
+    }
+    .header-words > h1 {
+        padding-right: 20px;
+        text-align: right;
+    }
+}

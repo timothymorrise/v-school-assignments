@@ -20,13 +20,16 @@ import "./List.css"
                 // DECONSTRUCTIONS
                 let { snippet } = dataObject
                 let { title } = snippet
-                let { url } = snippet.thumbnails.default
+                let { url } = snippet.thumbnails.medium
                 let { videoId } = snippet.resourceId
                 // RETURN
                 return <div key={videoId} className="list-item">
                     <Link to={`/videos/${videoId}`}>
                     <div className="list-item-image" style={{ backgroundImage: `url(${url})` }}></div>
-                    {title}</Link>
+                    <h2>
+                    {title}
+                    </h2>
+                    </Link>
                 </div>
 
             })
@@ -37,7 +40,9 @@ import "./List.css"
             <div> ...loading </div>
             :
             <main>
+                <div>
                 {mapPreviewDivs()}
+                </div>
             </main>
         )
     }

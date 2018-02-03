@@ -1,8 +1,12 @@
 // NAVBAR -- COMPONENT
 // ------------------------------
 
+// IMPORT FROM PACKAGES
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
+
+// IMPORT FROM FILES
+import "./Navbar.css"
 
 export default class Navbar extends Component {
     render() {

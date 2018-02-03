@@ -1,0 +1,56 @@
+/* HOME CSS */
+
+
+/* ============================== */
+
+main {
+    align-items: center;
+    border-top: 9px double black;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    padding-top: 20px;
+}
+
+.home>button {
+    background-color: lightskyblue;
+    font-size: 1.2em;
+    height: 100px;
+    margin: 20px;
+}
+
+.home>button:hover {
+    color: white;
+}
+
+.home-intro {
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+    margin: 20px;
+}
+
+.home-intro>p {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.home-title-image {
+    display: block;
+    height: 120px;
+    width: 300px;
+}
+
+@media (min-width: 700px) {
+    .home-intro {
+        font-size: 1.5em;
+    }
+
+    .home-title-image {
+        
+        height: 80px;
+        width: 200px;
+    }
+}

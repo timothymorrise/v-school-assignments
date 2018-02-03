@@ -1,0 +1,64 @@
+/* VIDEO PAGE -- CSS */
+/* ============================== */
+
+iframe {
+    height: 180px;
+    width: 320px;
+}
+
+.four-oh-four {
+    font-size: 4em;
+}
+
+.four-oh-four > a {
+    color: red;
+    text-decoration: none;
+}
+
+.video-page-counter {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+    width: 150px;
+}
+
+.video-page-counter > button {
+    background-color: lightskyblue;
+    font-size: 1.3em;
+    height: 35px;
+    width: 35px
+}
+
+#video-page-forward-only {
+    justify-content: flex-end;
+}
+
+.video-page-sliders {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 320px;
+}
+
+.video-page-sliders > button {
+    background-color: skyblue;
+    font-size: 1.5em;
+    width: 100px;
+}
+
+.video-page-sliders > button:hover{
+    color: white;
+}
+
+@media (min-width: 700px) {
+    iframe {
+        height: 325px;
+        width: 560px;
+    }
+
+    .video-page-sliders {
+        width: 560px
+    }
+}

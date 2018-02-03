@@ -2,9 +2,8 @@
 // ------------------------------
 
 import React, { Component } from 'react'
+
 import Character from "./Character"
-
-
 
 export default class CharacterSwitch extends Component {
     render() {

@@ -13,7 +13,10 @@ export let getVideos = () => {
         .then(response => {
             dispatch (
                 {type: "GET_VIDEOS",
-                payload: response.data.items}
+                payload: response.data.items.map(item => {
+                    item.boyCounter = 0
+                    return item
+                })}
             )
         })
         .catch(err => {
@@ -21,6 +24,16 @@ export let getVideos = () => {
         })
     }
 } 
+
+export const changeBoyCounter = (id, increment) => {
+    return {
+        type: "CHANGE_BOY_COUNTER",
+        id,
+        increment
+    }
+}
+
+
 
 // REDUCER FUNCTIONS
 let videoData = (prevDatalist = { loading: true, data: [] }, action) => {
@@ -30,7 +43,21 @@ let videoData = (prevDatalist = { loading: true, data: [] }, action) => {
                 loading: false,
                 data: [...action.payload]
             };
-   
+        case "CHANGE_BOY_COUNTER":
+            return {
+                ...prevDatalist,
+                data: prevDatalist.data.map(video => {
+                    if (video.snippet.resourceId.videoId === action.id) {
+                        let newVideo = {...video}
+                        if (newVideo.boyCounter + action.increment > -1) {
+                            newVideo.boyCounter = video.boyCounter + action.increment
+                        }
+                        return newVideo
+                    } else {
+                        return video
+                    }
+                })
+                };
         default:
             return prevDatalist
     }
