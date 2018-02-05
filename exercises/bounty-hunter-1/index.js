@@ -14,8 +14,6 @@ const bountyRoute = require("./routes/bounties.js");
 //PORT
 let port = 8089;
 
-
-
 // MIDDLEWARE
 app.use(bodyParser.json());
 

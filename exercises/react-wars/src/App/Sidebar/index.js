@@ -2,8 +2,12 @@
 // ==============================
 
 //IMPORT FROM PACKAGES
-import React, { Component } from 'react'
-import axios from "axios"
+import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+import axios from "axios";
+
+// IMPORT FROM FILES -- CSS
+import "./Sidebar.css"
 
 // VALUES
 const swURL = "https://swapi.co/api/people/"
@@ -22,7 +26,7 @@ export default class Sidebar extends Component {
         .then(response => {
             this.setState(
                 {
-                    data: response,
+                    data: response.data.results,
                     loading: false
                 }
             )
@@ -34,9 +38,24 @@ export default class Sidebar extends Component {
     
 
     render() {
+        
+        // DECONSTRUCTIONS
+        let { loading, data } = this.state
+        const generateLinks = data.map((person, index) => {
+                let { name } = person
+                let id = index + 1
+                return <Link
+                    to={`/${id}`}
+                    key={id + name}>{name}
+                    </Link>
+            })
+
         return (
+            loading ?
+            <div>be patient, Debra!</div>
+            :
             <aside>
-             sidebar test   
+                {generateLinks} 
             </aside>
         )
     }

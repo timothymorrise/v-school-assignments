@@ -14,6 +14,7 @@ import "./List.css"
     render() {
         let { loading, data } = this.props
         if(!loading) console.log(this.props)
+        
         // MAP LIST IEMS
         let mapPreviewDivs = () => {
             return data.map(dataObject => {

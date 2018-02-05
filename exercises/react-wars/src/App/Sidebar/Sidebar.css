@@ -1,0 +1,7 @@
+/* SIDEBAR -- CSS */
+/*  ============================= */
+
+aside {
+    display: flex;
+    flex-direction: column;
+}

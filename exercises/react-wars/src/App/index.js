@@ -1,27 +1,25 @@
 // APP - COMPONENT
 // ------------------------------
 
+// IMPORT FROM PACKAGES
 import React, { Component } from 'react';
-import axios from "axios";
+import { Route, Switch } from "react-router-dom";
 
+// IMPORT FROM FILES
 import Sidebar from "./Sidebar";
-import CharacterSwitch from "./CharacterSwitch";
+import Character from "./Character";
+import "./App.css"
 
-const swURL = "https://swapi.co/api/people/"
 
 export default class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            
-        }
-    }
 
     render() {
         return (
-            <div>
+            <div className="page-wrapper">
                 <Sidebar />
-                <CharacterSwitch />
+                <Switch>
+                    <Route path="/:id" component={Character} />
+                </Switch>
             </div>
         )
     }

@@ -1,9 +1,4 @@
-PERSONAL REACT READUX APP - MONSTER FACTORY BOY COUNTER EXPERIENCE
+REACT WARS
 =================================
 
-The prompt was to create a personal react redux website, utilizing an API request to an external site.
-
-I created a site that pulls data from the Web Series "Monster Factory" using the Youtube API. The app renders a full list, as well as giving a random button that pushes to a random video.
-
-To Add:
- - needs to fix the get requests so they pull the whole youtube playlist - currently they are limited to 50.
+An exercise combining a Switch from React Router whilst passing in data from a get request using Axios. Most difficult portion was getting brain around Life Cycles and also fixing the update issue.
