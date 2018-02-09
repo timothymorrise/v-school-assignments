@@ -13,19 +13,16 @@ export default class Character extends Component {
         super(props);
         this.state = {
             person: {},
-            loading: true
         }
         this.getStarWarMan = this.getStarWarMan.bind(this)
     }
     
-    getStarWarMan() {
-        let { id } = this.props.match.params
+    getStarWarMan(id) {
         axios.get(swURL + id)
         .then(response => {
             this.setState(
                 {
                     person: response.data,
-                    loading: false
                 }
             )
         })
@@ -35,20 +32,21 @@ export default class Character extends Component {
     }
 
     componentDidMount() {
-        this.getStarWarMan();
+        let { id } = this.props.match.params
+        this.getStarWarMan(id);
     }
 
     componentWillReceiveProps(nextProps) {
         let { id } = this.props.match.params
-        let { nextId } = nextProps.match.params
+        let nextId = nextProps.match.params.id
+        console.log(`id: ${id} ---- next Id: ${nextId}`)
         if ( id !== nextId) {
-            this.getStarWarMan();
+            this.getStarWarMan(nextId);      
+            }
         }
-     }
     
     render() {
-        console.log("jimmy")
-        let { loading, person } = this.state
+        let { person } = this.state
         let { name,
             height,
             hair_color,
@@ -56,9 +54,6 @@ export default class Character extends Component {
             gender
             } = person
         return (
-            loading ?
-            <div> Be patient ya ninny</div>
-            :
             <div>
                 <h1>{name}</h1>
                 <ul>

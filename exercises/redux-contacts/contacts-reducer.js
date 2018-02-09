@@ -3,10 +3,8 @@
 
 // REDUCERS
 let contactsReducer = (prevNames = [], action) => {
-        console.log("magic")
     switch(action.type) {
         case "ADD_CONTACT":
-            console.log("jerry")
             return [...prevNames, action.payload];
         case "REMOVE_CONTACT":
             let newNames = [...prevNames]

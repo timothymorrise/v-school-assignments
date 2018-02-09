@@ -46,7 +46,7 @@ bountyRoute.put("/:id", (req, res) => {
     let { id } = req.params;
     let updatedEntry = req.body
     let found = false;
-    // LOOP/UDATE
+    // LOOP/UPDATE
     for (let i = 0; i < database.length; i++) {
         if (database[i]._id === id) {
             database[i] = object.assign(database[i], updatedEntry);
