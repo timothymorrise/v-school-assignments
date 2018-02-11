@@ -31,3 +31,6 @@ export default class componentName extends Component {
 // }
 
 // export default connect 
+
+// GRAVY:
+// beatuify the urls - 
