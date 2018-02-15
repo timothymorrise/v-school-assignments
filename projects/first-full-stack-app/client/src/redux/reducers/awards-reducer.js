@@ -4,14 +4,17 @@
 // IMPORT FROM PACKAGES
 const axios = require("axios");
 
+// VARIABLES
+const awardsUrl = "/public/awards"
+
 // ACTION CREATORS
-export let getCategories = () => {
+export let getAwards = () => {
     return dispatch => {
-        axios.get("...")
+        axios.get(awardsUrl)
         .then(response => {
             dispatch (
                 {
-                    type: "GET_...",
+                    type: "GET_AWARDS",
                     payload: response.data
                 }
             )
@@ -23,15 +26,18 @@ export let getCategories = () => {
 }
 
 // REDUCER FUNCTIONS
-let categories = (prevDataList = { loading: true, data: [] }, action ) => {
+let awards = (prevDataList = { loading: true, data: [] }, action ) => {
     switch(action.type) {
-        case "GET_...":
+        case "GET_AWARDS":
             return {
                 loading: false,
                 data: [...action.payload]
-            }
+            };
+        default:
+            return prevDataList
     }
+    
 }
 
 // EXPORTS
-export default categories
+export default awards

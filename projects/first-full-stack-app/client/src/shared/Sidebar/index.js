@@ -4,33 +4,49 @@
 // IMPORT FROM PACKAGES
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import { Link } from "react-router-dom"
 
-import { SEXYSECRETGETBABIESCTIONCXREATOR } from // you know where
+// IMPORT FROM FILES -- ACTION CREATORS
+import { getAwards } from "../../redux/reducers/awards-reducer"
 
-export default class componentName extends Component {
+class Sidebar extends Component {
     
     componentDidMount() {
-        // SEXY SECRET ACTION CREATOR
+        this.props.getAwards()
     }
 
+   
+    
     render() {
-        // MAP THE BABIES CHANGE YOU LIFE
+        let { data } = this.props.awards
+        let generateLinks = () => {
+            return data.map((award, index) => {
+                let { awards_show_name, 
+                    awards_show_year,
+                    _id  } = award
+                return <Link key={index} to={`/awards/${_id}/1`} >{awards_show_name} &mdash; {awards_show_year}</Link>
+            })
+        }
+
         return (
+            
             <aside>
-                
+                hi let's be best friends
+                {generateLinks()}
             </aside>
         )
     }
 }
 
 // EXPORTS
-// mapStateToProps = () => {
-    // return {
-        // reducer of my loins?
-//     }
-// }
+const mapStateToProps = (state) => {
+    return {
+        awards: state.awards
+        // ballots
+    }
+}
 
-// export default connect 
+export default connect(mapStateToProps, { getAwards } )(Sidebar)
 
 // GRAVY:
-// beatuify the urls - 
+    // beatuify the urls - 

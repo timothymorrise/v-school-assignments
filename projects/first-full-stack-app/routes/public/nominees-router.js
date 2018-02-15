@@ -1,36 +1,36 @@
-// ADMIN / CATEGORIES -- ROUTER
+// PUBLIC / NOMINEES -- ROUTER
 // ==============================
 
 // IMPORT FROM PACKAGES
 const express = require("express")
 
 // IMPORT FROM FILES
-const categoryModel = require("../../models/category-model")
+const NomineeModel = require("../../models/nominee-model")
 
 // ROUTES
-const categoriesRouter = express.Router();
+const nomineesRouter = express.Router();
 
-categoriesRouter.get("/", (req, res) => {
-    categoryModel.find(req.query, (err, foundCateogory) => {
+nomineesRouter.get("/", (req, res) => {
+    NomineeModel.find(req.query, (err, foundNominees) => {
         if (err) {
             console.error(err);
             return res.status(500).send(err);
         }
-        return res.send(foundCateogory);
+        return res.send(foundNominees);
     })
 })
 
 
     //BY ID
-categoriesRouter.get("/:id", (req, res) => {
+nomineesRouter.get("/:id", (req, res) => {
     let { id } = req.params
-    categoryModel.findById(id, (err, foundCategory) => {
+    NomineeModel.findById(id, (err, foundNominee) => {
         if (err) {
             console.error(err);
             return res.status(500).send(err);
         } else{
             console.log("Found Category Document at " + id);
-            return res.send(foundCategory);
+            return res.send(foundNominee);
         }
    })
 })
@@ -38,4 +38,4 @@ categoriesRouter.get("/:id", (req, res) => {
 
 
 // EXPORTS
-module.exports = categoriesRouter;
+module.exports = nomineesRouter;

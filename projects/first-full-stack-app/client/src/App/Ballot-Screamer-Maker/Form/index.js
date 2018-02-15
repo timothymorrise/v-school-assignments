@@ -25,6 +25,7 @@ class Form extends Component {
         })
     }
 
+    // call the nominees using the order number from the categories, pass that into a parameters.
     
     render() {
 // generateInputs = nominees.map(nominee => {
@@ -40,8 +41,12 @@ class Form extends Component {
 }
 
 // EXPORTS
-const mapStateToProps = () => {
-
+const mapStateToProps = (state) => {
+    return {
+        categories: state.categories,
+        nominees: state.nominees,
+        ballots: state.ballots       
+    }
 }
 
-export default connect(mapStateToProps, {  } )(Form)
+export default connect(null, {  } )(Form)

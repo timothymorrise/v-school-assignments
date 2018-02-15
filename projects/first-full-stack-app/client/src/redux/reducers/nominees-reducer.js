@@ -4,14 +4,17 @@
 // IMPORT FROM PACKAGES
 const axios = require("axios");
 
+// VARIABLES
+const nomineesUrl = "/public/nominees/?category_id="
+
 // ACTION CREATORS
-export let getCategories = () => {
+export let getNominees = (id) => {
     return dispatch => {
-        axios.get("...")
+        axios.get(nomineesUrl + id)
         .then(response => {
-            dispatch (
+            dispatch(
                 {
-                    type: "GET_...",
+                    type: "GET_NOMINEES",
                     payload: response.data
                 }
             )
@@ -23,15 +26,17 @@ export let getCategories = () => {
 }
 
 // REDUCER FUNCTIONS
-let categories = (prevDataList = { loading: true, data: [] }, action ) => {
+let nominees = (prevDataList = { loading: true, data: [] }, action ) => {
     switch(action.type) {
-        case "GET_...":
+        case "GET_NOMINEES":
             return {
                 loading: false,
                 data: [...action.payload]
-            }
+            };
+        default: 
+            return prevDataList
     }
 }
 
 // EXPORTS
-export default categories
+export default nominees

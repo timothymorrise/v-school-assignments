@@ -8,7 +8,7 @@ const categorySchema = new mongoose.Schema(
     {   
         award_name: String,
         order_number: String,
-        award_id: 
+        award_show_id: 
         {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: "Award"

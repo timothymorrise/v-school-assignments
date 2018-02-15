@@ -4,10 +4,16 @@
 // IMPORTS 
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-// import blah blah blah from lalala
+
+// IMPORT FROM FILE -- REDUCERS
+import awards from "./reducers/awards-reducer"
+import categories from "./reducers/categories-reducer"
+import nominees from "./reducers/nominees-reducer"
+// import ballots from "./reducers/ballots-reducer"
+
 
 // CREATE STORE/COMBINE REDUCERS
-let store = createStore(combineReducers( {} ), applyMiddleware(thunk));
+let store = createStore(combineReducers( {awards, categories, nominees} ), applyMiddleware(thunk));
 
 // EXPORT
 export default store
