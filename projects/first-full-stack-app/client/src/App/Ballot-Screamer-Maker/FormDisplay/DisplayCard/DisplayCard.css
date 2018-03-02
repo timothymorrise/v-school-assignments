@@ -1,0 +1,12 @@
+/* DISPLAY CSS */
+/* ============================== */
+
+.display-card > h4 {
+    width: 160px;
+}
+
+.display-card-image {
+    background-size: contain;
+    width: 166px;
+    height: 250px;
+}

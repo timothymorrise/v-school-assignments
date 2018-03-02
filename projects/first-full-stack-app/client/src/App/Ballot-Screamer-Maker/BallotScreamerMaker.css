@@ -1,0 +1,7 @@
+/* Ballot Screamer Maker -- CSS */
+/* ============================== */
+
+.ballot-screamer-form-wrapper {
+    display: flex;
+    flex-direction: row;
+}

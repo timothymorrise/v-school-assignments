@@ -1,0 +1,31 @@
+/* FORM -- COMPONENT */
+/* ============================== */
+form {
+    overflow-x: scroll;
+}
+
+form > div {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.form-radio {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+}
+
+.form-title {
+    width: 150px;
+}
+
+.form-title-wrapper {
+    left: 200px;
+    position: relative;
+}
+
+.form-question-title{
+    width: 200px;
+}
+

@@ -7,27 +7,26 @@ const mongoose = require("mongoose")
 // SCHEMA
 const ballotSchema = new mongoose.Schema(
     {
-        name: {
-            type: String,
-            required: true
+        awards_id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Category"
         },
-        year: {
-            type: String,
-            required: true
+        category_id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Category"
         },
-        organization: {
-            type: String,
-            required: true
+        predicted: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Nominee"
         },
-        categories: [
-            {
-                name: String,
-                required: true,
-                expectedWinner: String,
-                favoriteWinner: String,
-                screamingWinner: String,
-            }
-        ]
+        favorite: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Nominee"
+        },
+        screamingAt: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Nominee"
+        }
     }, { timestamps: { createdAt: 'created_at' } }
 )
 

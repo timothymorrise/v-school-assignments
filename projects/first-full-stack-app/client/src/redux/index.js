@@ -9,11 +9,18 @@ import thunk from "redux-thunk";
 import awards from "./reducers/awards-reducer"
 import categories from "./reducers/categories-reducer"
 import nominees from "./reducers/nominees-reducer"
+import ballots from "./reducers/ballots-reducer"
 // import ballots from "./reducers/ballots-reducer"
 
 
 // CREATE STORE/COMBINE REDUCERS
-let store = createStore(combineReducers( {awards, categories, nominees} ), applyMiddleware(thunk));
+let reducer = combineReducers( {awards, categories, nominees, ballots} )
+
+const store = createStore(
+    reducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+    applyMiddleware(thunk)
+);
 
 // EXPORT
 export default store

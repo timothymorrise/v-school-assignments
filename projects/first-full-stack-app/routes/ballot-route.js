@@ -5,7 +5,7 @@
 const express = require("express")
 
 // IMPORT FROM FILES -- MODELS
-const ballotModel = require("../models/category-model")
+const ballotModel = require("../models/ballot-model")
 
 // ROUTE METHODS
 const ballotRouter = express.Router();
@@ -42,7 +42,7 @@ ballotRouter.route("/:id")
             console.error(err);
             return res.status(500).send(err);
         } else{
-            console.log("Found Category Document at " + id);
+            console.log("Found Ballot Document at " + id);
             return res.send(foundBallot);
         }
    })
@@ -54,21 +54,20 @@ ballotRouter.route("/:id")
             console.error(err);
             return res.status(500).send(err);
         } else {
-            console.log("Removed Category Document at " + id);
+            console.log("Removed Ballot Document at " + id);
             return res.send(removedBallot);
         }
     })
 })
 .put((req, res) => {
     let { id } = req.params
-    let updatedCategory = new ballotModel(req.body)
-    ballotModel.findByIdAndUpdate(id, updatedBallot, {new: true}, (err, updateBallot) => {
+    ballotModel.findByIdAndUpdate(id, req.body, {new: true}, (err, updatedBallot) => {
         if (err) {
             console.error(err);
             return res.status(500).send(err);
         } else {
-            console.log("Updated Category Document at " + id);
-            return res.send(updateBallot);;
+            console.log("Updated Ballot Document at " + id);
+            return res.send(updatedBallot);;
         }
     })
 })
