@@ -14,6 +14,10 @@ import BallotDisplay from "./BallotDisplay"
 import "./BallotScreamerMaker.css"
 
 class BallotScreamer extends Component {
+    constructor(props) {
+        super(props);
+        this.lateralMove = this.lateralMove.bind(this);
+    }
 
     componentDidMount() {
         let { award_id } = this.props.match.params
@@ -28,28 +32,35 @@ class BallotScreamer extends Component {
         }
     }
 
+    lateralMove(e) {
+        let { award_id, category_num } = this.props.match.params
+        if (e.target.name === "backward") {
+            this.props.history.push(`/awards/${award_id}/${(Number(category_num) - 1)}`);
+        } else if (e.target.name === "forward") {
+            this.props.history.push(`/awards/${award_id}/${(Number(category_num) + 1)}`)
+        }
+    }
+
     render() {
-        let { award_id } = this.props.match.params
+        let { award_id, category_num } = this.props.match.params
         let { categoryLoading, categories } = this.props
-        let catNum = this.props.match.params.category_num
         let category = categories.filter(category => {
             let { order_number } = category
-            if (catNum === order_number) return category
+            if (category_num === order_number) return category
         })[0]
-
+      
         return (
             categoryLoading ?
                 <div>
-                    <BallotDisplay />
                 </div>
                 :
-                <div>
+                <div className="ballot-screamer">
                     <h1>{category.award_name}</h1>
                     <div className="ballot-screamer-form-wrapper">
-                        <FormDisplay categoryId={category._id} />
+                        <FormDisplay categoryId={category._id} categoryNum={category_num} lateralMove={this.lateralMove} />
                         <Form categoryId={category._id} awardId={award_id} />
                     </div>
-                    <BallotDisplay />
+                    <BallotDisplay awardId={award_id} />
                 </div>
         )
     }

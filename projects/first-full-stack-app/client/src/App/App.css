@@ -1,0 +1,16 @@
+/* APP -- CSS */
+/* ============================== */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}

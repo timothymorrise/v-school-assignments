@@ -32,6 +32,7 @@ export const getBallots = (awardId) => {
 
 // GET BALLOT
 export const getBallot = (categoryId) => {
+    console.log("searching with this id", categoryId)
     return dispatch => {
         axios.get(getBallotUrl + categoryId)
         .then(response => {
@@ -110,7 +111,14 @@ const ballots = (prevData = { loadingMany: true, loadingSingle: true, data: [], 
         case("UPDATE_BALLOT"):
             return {
                 loading: false,
-                currentBallot: action.payload
+                currentBallot: action.payload,
+                data: prevData.data.map((ballot) => {
+                    if (ballot._id === action.id ) {
+                        return action.payload
+                    } else {
+                        return ballot
+                    }
+                })
             }
         default:
             return prevData

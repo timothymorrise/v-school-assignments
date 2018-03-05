@@ -10,6 +10,10 @@ form > div {
     flex-direction: row;
 }
 
+.form-wrapper {
+    border-bottom: 3px solid black;
+}
+
 .form-radio {
     display: flex;
     flex-direction: column;

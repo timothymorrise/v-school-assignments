@@ -8,6 +8,8 @@ import { Link } from "react-router-dom"
 
 // IMPORT FROM FILES -- ACTION CREATORS
 import { getAwards } from "../../redux/reducers/awards-reducer"
+import "./Sidebar.css"
+
 
 class Sidebar extends Component {
     
@@ -18,9 +20,9 @@ class Sidebar extends Component {
    
     
     render() {
-        let { data } = this.props.awards
+        let { awards } = this.props
         let generateLinks = () => {
-            return data.map((award, index) => {
+            return awards.map((award, index) => {
                 let { awards_show_name, 
                     awards_show_year,
                     _id  } = award
@@ -31,7 +33,6 @@ class Sidebar extends Component {
         return (
             
             <aside>
-                hi let's be best friends
                 {generateLinks()}
             </aside>
         )
@@ -41,8 +42,7 @@ class Sidebar extends Component {
 // EXPORTS
 const mapStateToProps = (state) => {
     return {
-        awards: state.awards
-        // ballots
+        awards: state.awards.data
     }
 }
 

@@ -1,0 +1,20 @@
+/* SIDEBAR -- CSS */
+/* ============================== */
+
+aside {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+aside > a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    width: 250px;
+}
+
+aside > a:hover {
+    color: gold;
+    text-shadow: 1px 1px white;
+}

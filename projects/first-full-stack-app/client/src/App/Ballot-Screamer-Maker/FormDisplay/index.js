@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 // IMPORT FROM FILES -- COMPONENTS
 import "./FormDisplay.css"
 import DisplayCard from "./DisplayCard"
-import { getNominees } from "../../../redux/reducers/nominees-reducer"
+import { getSomeNominees } from "../../../redux/reducers/nominees-reducer"
 
 class FormDisplay extends Component {
     constructor(props) {
@@ -17,27 +17,44 @@ class FormDisplay extends Component {
 
     componentDidMount() {
         let { categoryId } = this.props
-        this.props.getNominees(categoryId)
+        this.props.getSomeNominees(categoryId)
     }
-    
+
     componentWillReceiveProps(nextProps) {
-        let { categoryId} = this.props
+        let { categoryId } = this.props
         let nextId = nextProps.categoryId
-        if ( categoryId !== nextId ) {
-            this.props.getNominees(nextId);
+        if (categoryId !== nextId) {
+            this.props.getSomeNominees(nextId);
         }
     }
 
     render() {
-        let nomineeData = this.props.nominees.data
-        let { loading } = this.props.nominees
-        const generateDisplayCards = nomineeData.map( (nominee, index) =>
-                <DisplayCard {...nominee} key={index} />
-            )
-
+        let { categoryNum, categories, nominees, nomineeLoading } = this.props
+        const generateDisplayCards = nominees.map((nominee, index) =>
+            <DisplayCard {...nominee} key={index} />
+        )
+        const backwardButton = () => {
+            if (Number(categoryNum) === 1) {
+                return <div className="pseudo-button"></div>
+            } else {
+                return <button onClick={this.props.lateralMove} name="backward">	&larr;</button>
+            }
+        }
+        const forwardButton = () => {
+            if (Number(categoryNum) === (categories.length)) {
+                return <div className="pseudo-button"> </div>
+            } else {
+                return <button onClick={this.props.lateralMove} name="forward">&rarr;</button>
+            }
+        }
+        
         return (
             <div className="form-display">
-                {generateDisplayCards}
+                {backwardButton()}
+                <div className="form-display-container">
+                    {generateDisplayCards}
+                </div>
+                {forwardButton()}
             </div>
         )
     }
@@ -46,8 +63,10 @@ class FormDisplay extends Component {
 // EXPORTS
 const mapStateToProps = (state) => {
     return {
-        nominees: state.nominees
+        nominees: state.nominees.ballotData,
+        nomineeLoading: state.nominees.loading,
+        categories: state.categories.data
     }
 }
 
-export default connect(mapStateToProps, {getNominees} )(FormDisplay)
+export default connect(mapStateToProps, { getSomeNominees })(FormDisplay)

@@ -7,14 +7,13 @@ import { connect } from "react-redux";
 
 // IMPORT FROM FILES -- CSS // REDUCER
 import "./Form.css"
-import { getNominees } from "../../../redux/reducers/nominees-reducer"
+import { getSomeNominees } from "../../../redux/reducers/nominees-reducer"
 import { getBallot, postBallot, updateBallot } from "../../../redux/reducers/ballots-reducer"
 
 // CONSTRUCTOR
 class Form extends Component {
     constructor(props) {
         super(props);
-        console.log("constructor check", this.props.ballot)
         this.state = {
             predicted: "",
             favorite: "",
@@ -27,7 +26,7 @@ class Form extends Component {
 
     componentDidMount() {
         let { categoryId } = this.props
-        this.props.getNominees(categoryId)
+        this.props.getSomeNominees(categoryId)
         this.props.getBallot(categoryId)
     }
 
@@ -35,7 +34,7 @@ class Form extends Component {
         let { categoryId } = this.props
         let nextId = nextProps.categoryId
         if (categoryId !== nextId) {
-            this.props.getNominees(nextId);
+            this.props.getSomeNominees(nextId);
             this.props.getBallot(categoryId)
         }
         if (this.props.ballot !== undefined) {
@@ -50,6 +49,7 @@ class Form extends Component {
     }
 
     handleChange(e) {
+        
         let { value, name } = e.target
         this.setState(prevState => {
             return {
@@ -68,6 +68,7 @@ class Form extends Component {
             favorite: this.state.favorite,
             screamingAt: this.state.screamingAt
         }
+        console.log("handle submit ballot", ballot)
         if (this.props.ballot !== undefined) {
             let { _id } = this.props.ballot
             this.props.updateBallot(ballot, _id)
@@ -95,8 +96,10 @@ class Form extends Component {
                     checked={this.state[questionValue] === _id} />
             </div>
         })
+        // console.log("ballot elements", this.props.ballot)
+        // console.log("state", this.state)
         return (
-            <div>
+            <div className="form-wrapper">
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-title-wrapper">
                         {titles}
@@ -123,9 +126,9 @@ class Form extends Component {
 // EXPORTS
 const mapStateToProps = (state) => {
     return {
-        nominees: state.nominees.data,
+        nominees: state.nominees.ballotData,
         ballot: state.ballots.currentBallot[0]
     }
 }
 
-export default connect(mapStateToProps, { getNominees, getBallot, postBallot, updateBallot })(Form)
+export default connect(mapStateToProps, { getSomeNominees, getBallot, postBallot, updateBallot })(Form)
