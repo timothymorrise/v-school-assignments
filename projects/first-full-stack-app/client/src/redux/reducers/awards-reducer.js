@@ -10,6 +10,7 @@ const awardsUrl = "/public/awards"
 // ACTION CREATORS
 export let getAwards = () => {
     return dispatch => {
+        dispatch({type: "RESET_LOADING_AWARDS"})
         axios.get(awardsUrl)
         .then(response => {
             dispatch (
@@ -26,15 +27,20 @@ export let getAwards = () => {
 }
 
 // REDUCER FUNCTIONS
-let awards = (prevDataList = { loading: true, data: [] }, action ) => {
+let awards = (prevData = { loading: true, data: [] }, action ) => {
     switch(action.type) {
+        case "RESET_LOADING_AWARDS":
+            return {
+                ...prevData,
+                loading: true
+            };
         case "GET_AWARDS":
             return {
                 loading: false,
                 data: [...action.payload]
             };
         default:
-            return prevDataList
+            return prevData
     }
     
 }

@@ -15,6 +15,7 @@ const ballotsUrl = "/ballots/"
 // GET BALLOTS
 export const getBallots = (awardId) => {
     return dispatch => {
+        dispatch({type: "RESET_LOADING_BALLOTS"})
         axios.get(getBallotsUrl + awardId)
         .then(response => {
             dispatch (
@@ -34,12 +35,17 @@ export const getBallots = (awardId) => {
 export const getBallot = (categoryId) => {
     console.log("searching with this id", categoryId)
     return dispatch => {
+        dispatch({type: "RESET_LOADING_BALLOT"});
         axios.get(getBallotUrl + categoryId)
         .then(response => {
+            let data = response.data[0]
+            if (data === undefined) {
+                data = null
+            }
             dispatch (
                 {
                     type: "GET_BALLOT",
-                    payload: response.data
+                    payload: data
                 }
             )
         })
@@ -82,7 +88,9 @@ export const updateBallot = (ballot, id) => {
 
 // DELETE BALLOT
 // to add later
-
+// {
+//     predicted: "",
+//     }
 
 //////////////
 // REDUCER //
@@ -90,21 +98,32 @@ export const updateBallot = (ballot, id) => {
 
 const ballots = (prevData = { loadingMany: true, loadingSingle: true, data: [], currentBallot: {}}, action) => {
     switch(action.type) {
-        case("GET_BALLOTS"):
+        case "RESET_LOADING_BALLOT":
             return {
                 ...prevData,
-                loading: false,
+                loadingSingle: true
+            };
+        case "RESET_LOADING_BALLOTS":
+            return {
+                ...prevData,
+                data: [],
+                loadingMany: true
+            };
+        case "GET_BALLOTS":
+            return {
+                ...prevData,
+                loadingMany: false,
                 data: action.payload 
             };
         case("GET_BALLOT"):
             return {
                 ...prevData,
-                loading: false,
+                loadingSingle: false,
                 currentBallot: action.payload
             };
         case("POST_BALLOT"):
             return {
-                loading: false,
+                loadingSingle: false,
                 currentBallot: action.payload,
                 data: [...prevData.data, action.payload]
             };

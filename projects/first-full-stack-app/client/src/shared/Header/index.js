@@ -1,12 +1,18 @@
 // HEADER -- COMPONENT
 // ==============================
 
+// IMPORT FROM PACKAGES
 import React from 'react'
+
+// IMPORT FROM FILES
+import Navbar from "./Navbar"
+import "./Header.css"
 
 function Header() {
     return (
         <header>
-            Hello MOm
+            <h1>SCREAMING AT AWARDS SHOWS</h1>
+            <Navbar />
         </header>
     )
 }

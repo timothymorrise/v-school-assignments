@@ -10,6 +10,7 @@ const categoriesUrl = "/public/categories/?award_show_id="
 // ACTION CREATORS
 export let getCategories = (id) => {
     return dispatch => {
+        dispatch({type: "RESET_LOADING_CATEGORY"})
         axios.get(categoriesUrl + id)
         .then(response => {
             dispatch (
@@ -26,15 +27,20 @@ export let getCategories = (id) => {
 }
 
 // REDUCER FUNCTIONS
-let categories = (prevDataList = { loading: true, data: [] }, action ) => {
+let categories = (prevData = { loading: true, data: [] }, action ) => {
     switch(action.type) {
+        case "RESET_LOADING_CATEGORY":
+            return {
+                ...prevData,
+                loading: true
+            };
         case "GET_CATEGORIES":
             return {
                 loading: false,
-                data: [...action.payload]
+                data: action.payload
             };
         default:
-            return prevDataList
+            return prevData
     }
 }
 

@@ -35,9 +35,9 @@ class Form extends Component {
         let nextId = nextProps.categoryId
         if (categoryId !== nextId) {
             this.props.getSomeNominees(nextId);
-            this.props.getBallot(categoryId)
+            this.props.getBallot(nextId)
         }
-        if (this.props.ballot !== undefined) {
+        if (this.props.ballot !== null) {
             this.setState(
                 {
                     predicted: this.props.ballot.predicted,
@@ -49,7 +49,7 @@ class Form extends Component {
     }
 
     handleChange(e) {
-        
+
         let { value, name } = e.target
         this.setState(prevState => {
             return {
@@ -68,8 +68,7 @@ class Form extends Component {
             favorite: this.state.favorite,
             screamingAt: this.state.screamingAt
         }
-        console.log("handle submit ballot", ballot)
-        if (this.props.ballot !== undefined) {
+        if (this.props.ballot !== null) {
             let { _id } = this.props.ballot
             this.props.updateBallot(ballot, _id)
         } else {
@@ -78,7 +77,7 @@ class Form extends Component {
     }
 
     render() {
-        let { nominees } = this.props
+        let { nominees, loading } = this.props
         const titles = nominees.map((nominee, index) => {
             let { film_name, recipient } = nominee
             return <div key={index} className="form-title">
@@ -99,6 +98,9 @@ class Form extends Component {
         // console.log("ballot elements", this.props.ballot)
         // console.log("state", this.state)
         return (
+            loading ?
+            <div></div>
+            :
             <div className="form-wrapper">
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-title-wrapper">
@@ -127,7 +129,8 @@ class Form extends Component {
 const mapStateToProps = (state) => {
     return {
         nominees: state.nominees.ballotData,
-        ballot: state.ballots.currentBallot[0]
+        ballot: state.ballots.currentBallot,
+        loading: state.ballots.loadingSingle
     }
 }
 

@@ -3,7 +3,6 @@
 
 // IMPORT FROM PACKAGES
 import React, { Component } from 'react';
-import { Switch, Route } from "react-router-dom"
 import { connect } from "react-redux";
 
 // IMPORT FROM FILES -- ACTION CREATOR / COMPONENTS / CSS
@@ -48,10 +47,11 @@ class BallotScreamer extends Component {
             let { order_number } = category
             if (category_num === order_number) return category
         })[0]
-      
+        console.log("category loading in maker", categoryLoading)
         return (
             categoryLoading ?
                 <div>
+                    I'M HURTING LINDA
                 </div>
                 :
                 <div className="ballot-screamer">

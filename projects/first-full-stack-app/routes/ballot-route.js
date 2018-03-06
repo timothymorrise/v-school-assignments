@@ -21,13 +21,13 @@ ballotRouter.route("/")
     })
 })
 .post((req, res) => {
-    let award = new ballotModel(req.body)
-    award.save((err, savedBallot) => {
+    let ballot = new ballotModel(req.body)
+    ballot.save((err, savedBallot) => {
         if (err) {
             console.error(err);
             return res.status(500).send(err);
         } else {
-            console.log("Post successfully added to the database");
+            console.log("Ballot successfully added to the database");
             return res.send(savedBallot);
         }
     })

@@ -6,10 +6,6 @@
     flex-direction: column;
 }
 
-.ballot-screamer {
-    background-color: #c1a517;
-}
-
 .ballot-screamer > h1 {
     margin-left: 140px;
 }

@@ -20,15 +20,23 @@ class BallotDisplay extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        let { awardId } = this.props
-        let nextId = nextProps.awardId
+        let { awardId } = this.props;
+        let nextId = nextProps.awardId;
         if (awardId !== nextId) {
             this.props.getBallots(nextId);
         }
     }
 
     render() {
-        let { awards, awardId, categories, nominees, ballots } = this.props
+        let { awards, 
+            awardId, 
+            awardsLoading,
+            categories, 
+            categoryLoading,
+            nominees, 
+            nomineeLoading,
+            ballots,
+            ballotLoading } = this.props;
         let title = () => {
             let award = awards.filter(award => {
                 return (award._id === awardId)
@@ -46,7 +54,7 @@ class BallotDisplay extends Component {
                     return (category._id === ballot2.category_id)
                 })[0].order_number
                 return (order1 - order2)
-            })
+            });
             return ballots.map((ballot) => {
                 let categoryTitle = categories.filter(category => {
                     return (category._id === ballot.category_id)
@@ -63,17 +71,20 @@ class BallotDisplay extends Component {
 
                return <div className="ballot-display-category" key={ballot._id}>
                    <h2>{categoryTitle}</h2>
-                   <h3><span className="ballot-display-bold">Predicted winner:</span> {predictedNominee.recipient} for <span className="ballot-display-italics">{predictedNominee.film_name}</span></h3>
-                   <h3><span className="ballot-display-bold">Favorite to win:</span> {favoriteNominee.recipient} for <span className="ballot-display-italics">{favoriteNominee.film_name}</span></h3>
-                   <h3><span className="ballot-display-bold">Would like to Scream At:</span> {screamingAtNominee.recipient} for <span className="ballot-display-italics">{screamingAtNominee.film_name}</span></h3>
+                   <p><span className="ballot-display-bold">Predicted winner:</span> {predictedNominee.recipient} for <span className="ballot-display-italics">{predictedNominee.film_name}</span></p>
+                   <p><span className="ballot-display-bold">Favorite to win:</span> {favoriteNominee.recipient} for <span className="ballot-display-italics">{favoriteNominee.film_name}</span></p>
+                   <p><span className="ballot-display-bold">Would like to Scream At:</span> {screamingAtNominee.recipient} for <span className="ballot-display-italics">{screamingAtNominee.film_name}</span></p>
                </div>
             })
         }
-        console.log("ballots", ballots)
+        console.log(ballots, categories);
         return (
+            ( ballotLoading && nomineeLoading && categoryLoading && awardsLoading ) ?
+            <div></div>
+            :
             <div className="ballot-display">
-                {title()}
-                {votes()}
+                {ballots.length ? title(): null}
+                {ballots.length ? votes() : null}
             </div>
         )
     }
@@ -84,9 +95,13 @@ class BallotDisplay extends Component {
 const mapStateToProps = (state) => {
     return {
         awards: state.awards.data,
+        awardsLoading: state.awards.loading,
         categories: state.categories.data,
+        categoryLoading: state.categories.loading,
         nominees: state.nominees.data,
-        ballots: state.ballots.data
+        nomineeLoading: state.nominees.loading,
+        ballots: state.ballots.data,
+        ballotLoading: state.ballots.loadingMany
     }
 }
 

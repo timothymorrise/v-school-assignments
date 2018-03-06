@@ -10,6 +10,7 @@ const nomineesUrl = "/public/nominees/"
 // ACTION CREATORS
 export let getNominees = () => {
     return dispatch => {
+        dispatch({type: "RESET_LOADING_NOMINEE"})
         axios.get(nomineesUrl)
         .then(response => {
             dispatch(
@@ -43,22 +44,27 @@ export let getSomeNominees = (id) => {
 }
 
 // REDUCER FUNCTIONS
-let nominees = (prevDataList = { loading: true, data: [], ballotData: [] }, action ) => {
+let nominees = (prevData = { loading: true, data: [], ballotData: [] }, action ) => {
     switch(action.type) {
+        case "RESET_LOADING_NOMINEE":
+            return {
+                ...prevData,
+                loading: true
+            }
         case "GET_SOME_NOMINEES":
             return {
-                ...prevDataList,
+                ...prevData,
                 loading: false,
                 ballotData: [...action.payload]
             };
         case "GET_NOMINEES":
             return {
-                ...prevDataList,
+                ...prevData,
                 loading: false,
                 data: [...action.payload]
             }
         default: 
-            return prevDataList
+            return prevData
     }
 }
 
