@@ -20,8 +20,8 @@ mongoose.connect("mongodb://localhost:27017/rock-the-vote", (err) => {
 
 // APPLY MIDDLEWARE & ROUTES
 app.use(bodyParser.json());
-app.use("/post", postRouter);
-app.use("/comment", commentRouter);
+app.use("/posts", postRouter);
+app.use("/comments", commentRouter);
 
 // LISTENING ON PORT 
 app.listen(8080, () => {

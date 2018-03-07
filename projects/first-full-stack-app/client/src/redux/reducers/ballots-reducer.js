@@ -60,7 +60,6 @@ export const postBallot = (ballot) => {
     return dispatch => {
         axios.post(ballotsUrl, ballot)
         .then((response) => {
-            console.log(response)
             dispatch({
                 type: "POST_BALLOT",
                 payload: response.data
@@ -78,7 +77,7 @@ export const updateBallot = (ballot, id) => {
         axios.put(ballotsUrl + id, ballot)
             .then((response) => {
                 dispatch({
-                    type: "UPDATE_ISSUE",
+                    type: "UPDATE_POST",
                     payload: response.data,
                     id
                 })
