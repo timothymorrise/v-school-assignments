@@ -7,11 +7,11 @@ import thunk from "redux-thunk";
 
 // IMPORT FROM FILE -- REDUCERS
 
-// import posts from "./reducers/ballots-reducer"
-// import comments from "./reducers/comments-reducer"
+import posts from "./reducers/posts-reducer"
+import comments from "./reducers/comments-reducer"
 
 // CREATE STORE/COMBINE REDUCERS
-let reducer = combineReducers( {} )
+let reducer = combineReducers( {posts, comments} )
 
 const store = createStore(
     reducer,

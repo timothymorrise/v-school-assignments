@@ -15,19 +15,19 @@ const ballotsUrl = "/ballots/"
 // GET BALLOTS
 export const getBallots = (awardId) => {
     return dispatch => {
-        dispatch({type: "RESET_LOADING_BALLOTS"})
+        dispatch({ type: "RESET_LOADING_BALLOTS" })
         axios.get(getBallotsUrl + awardId)
-        .then(response => {
-            dispatch (
-                {
-                    type: "GET_BALLOTS",
-                    payload: response.data
-                }
-            )
-        })
-        .catch(err => {
-            console.error(err)
-        })
+            .then(response => {
+                dispatch(
+                    {
+                        type: "GET_BALLOTS",
+                        payload: response.data
+                    }
+                )
+            })
+            .catch(err => {
+                console.error(err)
+            })
     }
 }
 
@@ -35,23 +35,23 @@ export const getBallots = (awardId) => {
 export const getBallot = (categoryId) => {
     console.log("searching with this id", categoryId)
     return dispatch => {
-        dispatch({type: "RESET_LOADING_BALLOT"});
+        dispatch({ type: "RESET_LOADING_BALLOT" });
         axios.get(getBallotUrl + categoryId)
-        .then(response => {
-            let data = response.data[0]
-            if (data === undefined) {
-                data = null
-            }
-            dispatch (
-                {
-                    type: "GET_BALLOT",
-                    payload: data
+            .then(response => {
+                let data = response.data[0]
+                if (data === undefined) {
+                    data = null
                 }
-            )
-        })
-        .catch(err => {
-            console.error(err)
-        })
+                dispatch(
+                    {
+                        type: "GET_BALLOT",
+                        payload: data
+                    }
+                )
+            })
+            .catch(err => {
+                console.error(err)
+            })
     }
 }
 
@@ -59,15 +59,17 @@ export const getBallot = (categoryId) => {
 export const postBallot = (ballot) => {
     return dispatch => {
         axios.post(ballotsUrl, ballot)
-        .then((response) => {
-            dispatch({
-                type: "POST_BALLOT",
-                payload: response.data
+            .then((response) => {
+                dispatch(
+                    {
+                        type: "POST_BALLOT",
+                        payload: response.data
+                    }
+                )
             })
-        })
-        .catch(err => {
-            console.error(err)
-        })
+            .catch(err => {
+                console.error(err)
+            })
     }
 }
 
@@ -95,8 +97,8 @@ export const updateBallot = (ballot, id) => {
 // REDUCER //
 //////////////
 
-const ballots = (prevData = { loadingMany: true, loadingSingle: true, data: [], currentBallot: {}}, action) => {
-    switch(action.type) {
+const ballots = (prevData = { loadingMany: true, loadingSingle: true, data: [], currentBallot: {} }, action) => {
+    switch (action.type) {
         case "RESET_LOADING_BALLOT":
             return {
                 ...prevData,
@@ -112,26 +114,26 @@ const ballots = (prevData = { loadingMany: true, loadingSingle: true, data: [], 
             return {
                 ...prevData,
                 loadingMany: false,
-                data: action.payload 
+                data: action.payload
             };
-        case("GET_BALLOT"):
+        case "GET_BALLOT":
             return {
                 ...prevData,
                 loadingSingle: false,
                 currentBallot: action.payload
             };
-        case("POST_BALLOT"):
+        case "POST_BALLOT":
             return {
                 loadingSingle: false,
                 currentBallot: action.payload,
                 data: [...prevData.data, action.payload]
             };
-        case("UPDATE_BALLOT"):
+        case "UPDATE_BALLOT":
             return {
                 loading: false,
                 currentBallot: action.payload,
                 data: prevData.data.map((ballot) => {
-                    if (ballot._id === action.id ) {
+                    if (ballot._id === action.id) {
                         return action.payload
                     } else {
                         return ballot

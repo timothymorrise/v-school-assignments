@@ -1,0 +1,14 @@
+/* POST FORM -- CSS */
+/* ============================== */
+
+.post-form {
+    display: flex;
+    flex-direction: column;
+}
+.post-form-title {
+    width: 400px;
+}
+.post-form-description {
+    height: 110px;
+    width: 400px;
+}
