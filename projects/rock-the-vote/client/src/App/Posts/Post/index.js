@@ -6,8 +6,10 @@ import React, { Component } from 'react'
 import { connect } from "react-redux";
 
 // IMPORT FROM FILES
-import { deletePost } from "../../../redux/reducers/posts-reducer";
-import PostForm from "../shared/PostForm"
+import { deletePost, updatePost } from "../../../redux/reducers/posts-reducer";
+import Comment from "./Comment";
+import CommentForm from "../shared/CommentForm";
+import PostForm from "../shared/PostForm";
 import "./Post.css";
 
 class Post extends Component {
@@ -38,21 +40,34 @@ class Post extends Component {
 
     handleClick(e) {
         let { name } = e.target
-        if (name === "plus") {
-            this.changeVote(1)
-        } else if (name === "minus") {
-            this.changeVote(-1)
-        } else if (name === "edit-toggle") {
-            console.log("click handle working")
-            this.toggleEdit(this.state.toggle)
-        } else if (name === "delete") {
-            this.props.deletePost(this.props._id)
+        switch (name) {
+            case "plus":
+                this.changeVote(1)
+                break;
+            case "minus":
+                this.changeVote(-1)
+                break;
+            case "edit-toggle":
+                this.toggleEdit(this.state.toggle)
+                break;
+            case "delete":
+                this.props.deletePost(this.props._id)
         }
     }
 
     render() {
-        let { title, description, votes } = this.props
-        const form = () => { }
+        let { comments,
+            description,
+            _id,
+            title,
+            votes
+         } = this.props
+         console.log("comments check in post compoent", comments)
+        let commentComponents = comments.map(comment => {
+            return <div key={comment._id}>
+                        <Comment {...comment} />
+                    </div>
+        })
         let component = (toggle) => {
             if (toggle === "post") {
                 return <div className="post">
@@ -65,11 +80,15 @@ class Post extends Component {
                     </div>
                     <button onClick={this.handleClick} name="edit-toggle">Edit</button>
                     <button onClick={this.handleClick} name="delete">Delete</button>
+                    <CommentForm id={_id} />
+                    {commentComponents}
                 </div>
             } else if (toggle === "form") {
                 return <div>
-                    TELL US ABOUT IT JANET
+                    <h3 className="post-edit-header">Edit comment: </h3>
                     <PostForm edit {...this.props} toggleEdit={this.toggleEdit} />
+                    <CommentForm id={_id} />
+                    {commentComponents}
                 </div>
 
             }
@@ -83,4 +102,4 @@ class Post extends Component {
 }
 
 // EXPORT
-export default connect(null, { deletePost })(Post)
+export default connect(null, { deletePost, updatePost })(Post)

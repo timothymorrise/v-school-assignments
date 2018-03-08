@@ -4,7 +4,13 @@
 .post-form {
     display: flex;
     flex-direction: column;
+    margin: 20px;
 }
+
+.post-form > button {
+    width: 400px;
+}
+
 .post-form-title {
     width: 400px;
 }

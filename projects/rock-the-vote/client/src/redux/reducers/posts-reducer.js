@@ -16,7 +16,6 @@ export const getPosts = () => {
     return dispatch => {
         axios.get(postsUrl)
             .then(response => {
-                console.log("posts in axios request", response.data)
                 dispatch(
                     {
                         type: "GET_POSTS",

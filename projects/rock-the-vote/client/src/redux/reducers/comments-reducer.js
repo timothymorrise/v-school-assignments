@@ -5,7 +5,7 @@
 const axios = require("axios");
 
 // VARIABLES
-const commentsUrl = "/comments"
+const commentsUrl = "/comments/"
 
 /////////////////////
 // ACTION CREATORS //
@@ -14,7 +14,7 @@ const commentsUrl = "/comments"
 // GET COMMENTS
 export const getComments = () => {
     return dispatch => {
-        axios.get()
+        axios.get(commentsUrl)
             .then(response => {
                 dispatch(
                     {
@@ -50,9 +50,9 @@ export const postComment = (comment) => {
 // DELETE COMMENT
 export const deleteComment = (id) => {
     return dispatch => {
-        axios.delete()
+        axios.delete(commentsUrl + id, id)
             .then(response => {
-                (
+                dispatch(
                     {
                         type: "DELETE_COMMENT",
                         id
@@ -76,16 +76,17 @@ const comments = (prevData = { loading: true, data: [] }, action) => {
                 data: action.payload
             }
                 ;
-        case "POST_COMMENTS":
+        case "POST_COMMENT":
             return {
                 ...prevData,
                 data: [...prevData.data, action.payload]
             }
                 ;
         case "DELETE_COMMENT":
+            console.log("firing in reducer switch")
             return {
                 ...prevData,
-                data: prevData.filter(comment => {
+                data: prevData.data.filter(comment => {
                     return comment._id !== action.id
                 })
             }

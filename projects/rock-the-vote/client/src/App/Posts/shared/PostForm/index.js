@@ -64,23 +64,23 @@ class PostForm extends Component {
 
     render() {
         let { title, description } = this.state
-        console.log("post form props check", this.props)
         return (
             <form className="post-form" onSubmit={this.handleSubmit}>
-                <h2>Enter your post</h2>
-               <input onChange={this.handleChange} 
-                className="post-form-title"
-                value={title} 
-                name="title" 
-                type="text" 
-                placeholder="Title of your post" 
+               <input 
+                    onChange={this.handleChange} 
+                    className="post-form-title"
+                    value={title} 
+                    name="title" 
+                    type="text" 
+                    placeholder="Title of your post" 
                 /> 
-               <input onChange={this.handleChange} 
-               className="post-form-description"
-               value={description} 
-               name="description" 
-               type="text"
-               placeholder="Post a description of your issue" 
+               <input 
+                    onChange={this.handleChange} 
+                    className="post-form-description"
+                    value={description} 
+                    name="description" 
+                    type="text"
+                    placeholder="Post a description of your issue" 
                /> 
                <h3></h3>
                 <button>SUBMIT POST</button>

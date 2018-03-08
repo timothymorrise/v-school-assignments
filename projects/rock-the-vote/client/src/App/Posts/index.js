@@ -8,26 +8,34 @@ import { connect } from "react-redux";
 // IMPORT FROM FILES
 import PostForm from "./shared/PostForm";
 import Post from "./Post";
-import { getPosts } from "../../redux/reducers/posts-reducer"
+import { getPosts } from "../../redux/reducers/posts-reducer";
+import { getComments } from "../../redux/reducers/comments-reducer";
 
 // CONSTRUCTOR
 class Posts extends Component {
     componentDidMount() {
         this.props.getPosts();
+        this.props.getComments();
     }
 
     render() {
-        let { posts } = this.props
+        let { posts, comments } = this.props
+        console.log("comments in Posts", comments)
         posts.sort((post1, post2) => {
             return post2.votes-post1.votes
-        })
+        });
         let postComponents = posts.map(post => {
+            let filteredComments = comments.filter(comment => {
+                return (comment.post_id === post._id)
+            })
             return <div key={post._id}>
-                <Post  {...post}/>
+                <Post comments={filteredComments}  {...post}/>
             </div>
         })
+
         return (
             <div>
+                <h2>Enter your post, mama: </h2>
                 <PostForm add />
                 {postComponents}
             </div>
@@ -39,7 +47,8 @@ class Posts extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        posts: state.posts.data
+        posts: state.posts.data,
+        comments: state.comments.data
     }
 }
-export default connect(mapStateToProps, { getPosts } )(Posts)
+export default connect(mapStateToProps, { getPosts, getComments } )(Posts)

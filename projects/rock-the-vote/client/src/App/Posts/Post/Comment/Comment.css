@@ -1,0 +1,12 @@
+/* COMMENT -- CSS */
+/* ============================== */
+
+.comment {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.comment > button {
+    height: 1em;
+}

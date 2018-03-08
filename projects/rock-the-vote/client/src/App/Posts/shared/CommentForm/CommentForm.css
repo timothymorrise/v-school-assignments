@@ -1,0 +1,12 @@
+/* COMMENT FORM -- CSS */
+/* ============================== */
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.comment-form > button {
+    width: 100px;
+}
