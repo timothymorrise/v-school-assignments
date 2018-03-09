@@ -5,11 +5,12 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux"; 
 
-// IMPORT FROM FILES
-import PostForm from "./shared/PostForm";
-import Post from "./Post";
+// IMPORT FROM FILES -- ACTION CREATORS, COMPONENT, CSS
 import { getPosts } from "../../redux/reducers/posts-reducer";
 import { getComments } from "../../redux/reducers/comments-reducer";
+import PostForm from "./shared/PostForm";
+import Post from "./Post";
+import "./Posts.css";
 
 // CONSTRUCTOR
 class Posts extends Component {
@@ -37,6 +38,7 @@ class Posts extends Component {
             <div>
                 <h2>Enter your post, mama: </h2>
                 <PostForm add />
+                <div className="posts-border"></div>
                 {postComponents}
             </div>
         )

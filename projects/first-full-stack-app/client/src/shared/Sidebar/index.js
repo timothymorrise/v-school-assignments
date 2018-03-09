@@ -4,12 +4,11 @@
 // IMPORT FROM PACKAGES
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 // IMPORT FROM FILES -- ACTION CREATORS
 import { getAwards } from "../../redux/reducers/awards-reducer"
 import "./Sidebar.css"
-
 
 class Sidebar extends Component {
     

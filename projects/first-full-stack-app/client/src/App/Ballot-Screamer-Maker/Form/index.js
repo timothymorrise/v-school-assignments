@@ -74,6 +74,7 @@ class Form extends Component {
         } else {
             this.props.postBallot(ballot)
         }
+        
     }
 
     render() {

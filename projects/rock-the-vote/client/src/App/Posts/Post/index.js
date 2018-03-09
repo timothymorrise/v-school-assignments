@@ -72,11 +72,11 @@ class Post extends Component {
             if (toggle === "post") {
                 return <div className="post">
                     <h2>{title}</h2>
-                    <h2>{votes}</h2>
                     <p>{description}</p>
-                    <div>
-                        <button onClick={this.handleClick} name="plus">+</button>
-                        <button onClick={this.handleClick} name="minus">-</button>
+                    <div className="post-votes">
+                        <button onClick={this.handleClick} name="plus">&uarr;</button>
+                        <h2>{votes}</h2>
+                        <button onClick={this.handleClick} name="minus">&darr;</button>
                     </div>
                     <button onClick={this.handleClick} name="edit-toggle">Edit</button>
                     <button onClick={this.handleClick} name="delete">Delete</button>
@@ -84,8 +84,8 @@ class Post extends Component {
                     {commentComponents}
                 </div>
             } else if (toggle === "form") {
-                return <div>
-                    <h3 className="post-edit-header">Edit comment: </h3>
+                return <div className="post">
+                    <h3 className="post-edit-header">Edit Post: </h3>
                     <PostForm edit {...this.props} toggleEdit={this.toggleEdit} />
                     <CommentForm id={_id} />
                     {commentComponents}

@@ -1,0 +1,43 @@
+/* APP -- CSS */
+/* ============================== */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+header {
+    align-items: center;
+    background-image: url("../images/hexes.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100px;
+}
+
+header > h1 {
+    font-size: 3em;
+    
+}
+
+h1 > a {
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+footer {
+    background-image: url("../images/hexes.jpg");
+    background-size: cover;  
+    height: 100px;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: row;
+}

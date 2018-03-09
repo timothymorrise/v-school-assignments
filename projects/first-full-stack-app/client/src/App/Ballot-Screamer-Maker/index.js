@@ -47,7 +47,6 @@ class BallotScreamer extends Component {
             let { order_number } = category
             if (category_num === order_number) return category
         })[0]
-        console.log("category loading in maker", categoryLoading)
         return (
             categoryLoading ?
                 <div>
@@ -58,7 +57,8 @@ class BallotScreamer extends Component {
                     <h1>{category.award_name}</h1>
                     <div className="ballot-screamer-form-wrapper">
                         <FormDisplay categoryId={category._id} categoryNum={category_num} lateralMove={this.lateralMove} />
-                        <Form categoryId={category._id} awardId={award_id} />
+                        <br />
+                        <Form categoryId={category._id} awardId={award_id} lateralMove={this.lateralMove}/>
                     </div>
                     <BallotDisplay awardId={award_id} />
                 </div>

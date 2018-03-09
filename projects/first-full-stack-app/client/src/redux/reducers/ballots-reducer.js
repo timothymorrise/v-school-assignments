@@ -33,7 +33,6 @@ export const getBallots = (awardId) => {
 
 // GET BALLOT
 export const getBallot = (categoryId) => {
-    console.log("searching with this id", categoryId)
     return dispatch => {
         dispatch({ type: "RESET_LOADING_BALLOT" });
         axios.get(getBallotUrl + categoryId)
@@ -79,7 +78,7 @@ export const updateBallot = (ballot, id) => {
         axios.put(ballotsUrl + id, ballot)
             .then((response) => {
                 dispatch({
-                    type: "UPDATE_POST",
+                    type: "UPDATE_BALLOT",
                     payload: response.data,
                     id
                 })

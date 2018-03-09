@@ -1,0 +1,9 @@
+/* POSTS --CSS */
+
+/* ============================== */
+
+.posts-border {
+    border-bottom: 3px solid black;
+    clear: both;
+    width: 100%;
+}

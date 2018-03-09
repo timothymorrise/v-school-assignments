@@ -1,0 +1,12 @@
+/* HOME -- CSS */
+/* ============================== */
+
+main {
+    background-color: cyan;
+    min-width: 100vw;
+    padding: 20px;
+}
+
+.home {
+    padding: 20px;
+}

@@ -1,0 +1,23 @@
+/* RESUME -- CSS */
+/* ============================== */
+
+.resume {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.resume-image {
+    width: 440px;
+    height: 600px;
+}
+
+.resume > a {
+    color: magenta;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+.resume > a:hover {
+    color: blueviolet;
+}

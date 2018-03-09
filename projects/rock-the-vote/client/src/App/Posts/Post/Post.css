@@ -2,7 +2,26 @@
 /* ============================= */
 
 .post {
-    margin: 20px;
+    border: 1px solid black;
+    padding: 20px;
+    margin-top: 15px; 
+    width: 420px;
+}
+
+.post-votes {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+    min-height: 7em;
+    width: 3em;
+}
+
+.post-votes > button {
+    background-color: lightgray;
+    font-size: 1.6em;
+    height: 50px;
+    width: 50px;
 }
 
 .post-edit-header {

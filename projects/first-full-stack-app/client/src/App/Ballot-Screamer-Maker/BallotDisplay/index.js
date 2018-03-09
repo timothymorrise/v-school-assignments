@@ -77,7 +77,6 @@ class BallotDisplay extends Component {
                </div>
             })
         }
-        console.log(ballots, categories);
         return (
             ( ballotLoading && nomineeLoading && categoryLoading && awardsLoading ) ?
             <div></div>

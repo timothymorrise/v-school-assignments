@@ -69,19 +69,20 @@ class PostForm extends Component {
                <input 
                     onChange={this.handleChange} 
                     className="post-form-title"
-                    value={title} 
-                    name="title" 
-                    type="text" 
+                    name="title"
                     placeholder="Title of your post" 
+                    type="text" 
+                    value={title}   
                 /> 
-               <input 
+               <textarea 
                     onChange={this.handleChange} 
                     className="post-form-description"
-                    value={description} 
+                    height="110"
                     name="description" 
-                    type="text"
                     placeholder="Post a description of your issue" 
-               /> 
+                    type="text"
+                    value={description} 
+               ></textarea> 
                <h3></h3>
                 <button>SUBMIT POST</button>
             </form>

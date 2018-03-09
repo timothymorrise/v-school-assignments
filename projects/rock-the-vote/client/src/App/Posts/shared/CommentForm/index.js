@@ -44,11 +44,11 @@ class CommentForm extends Component {
         let { text } = this.state
         return (
             <form onSubmit={this.handleSubmit} className="comment-form">
-                <input 
+                <textarea 
                     onChange={this.handleChange}
                     type="text"
                     name="text" 
-                    value={text} />
+                    value={text}></textarea>
                 <button>Add Comment</button>
             </form>
         )
