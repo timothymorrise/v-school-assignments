@@ -3,7 +3,7 @@
 // IMPORT FROM PACKAGES
 const mongoose = require("mongoose");
 
-// 
+// SCHEMA
 const categorySchema = new mongoose.Schema(
     {   
         award_name: String,

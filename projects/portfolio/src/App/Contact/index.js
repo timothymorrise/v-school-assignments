@@ -1,8 +1,12 @@
 // CONTACT -- COMPONENT
 // ==============================
 
+// IMPORT FROM PACKAGES
 import React from 'react'
 import { Link } from "react-router-dom";
+
+// IMPORT FROM FILES -- CSS
+import "./Contact.css"
 
 function Contact() {
     return (

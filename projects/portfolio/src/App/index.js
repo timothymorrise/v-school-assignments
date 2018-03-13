@@ -38,3 +38,6 @@ function App() {
 }
 
 export default App
+
+// GRAVY -- 
+// ADD IMAGE LOAD FOR RIGHT CLICK

@@ -3,7 +3,7 @@
 // IMPORT FROM PACKAGES
 const mongoose = require("mongoose")
 
-//
+// SCHEMA
 const nomineeModel = new mongoose.Schema(
     {
         film_name: String,
