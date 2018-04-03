@@ -22,6 +22,7 @@ ballotRouter.route("/")
 })
 .post((req, res) => {
     let ballot = new ballotModel(req.body)
+    ballot.user = req.user._id;
     ballot.save((err, savedBallot) => {
         if (err) {
             console.error(err);
