@@ -37,8 +37,11 @@ ballotRouter.route("/")
     //BY ID
 ballotRouter.route("/:id")
 .get((req, res) => {
-    let { id } = req.params
-    ballotModel.findById(id, (err, foundBallot) => {
+    let query = {
+        _id: req.params.id,
+        user: req.user._id
+    };
+    ballotModel.findOne(query, (err, foundBallot) => {
         if (err) {
             console.error(err);
             return res.status(500).send(err);
@@ -49,8 +52,11 @@ ballotRouter.route("/:id")
    })
 })
 .delete((req, res) => {
-    let { id } = req.params
-    ballotModel.findByIdAndRemove( id, (err, removedBallot) => {
+    let query = {
+        _id: req.params.id,
+        user: req.user._id
+    };
+    ballotModel.findOneAndRemove(query, (err, removedBallot) => {
         if (err) {
             console.error(err);
             return res.status(500).send(err);
@@ -62,7 +68,11 @@ ballotRouter.route("/:id")
 })
 .put((req, res) => {
     let { id } = req.params
-    ballotModel.findByIdAndUpdate(id, req.body, {new: true}, (err, updatedBallot) => {
+    let query = {
+        _id: req.params.id,
+        user: req.user._id
+    };
+    ballotModel.findOneAndUpdate(query, req.body, {new: true}, (err, updatedBallot) => {
         if (err) {
             console.error(err);
             return res.status(500).send(err);
