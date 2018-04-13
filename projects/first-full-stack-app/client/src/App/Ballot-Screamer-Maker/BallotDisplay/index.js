@@ -47,7 +47,7 @@ class BallotDisplay extends Component {
             </div>
         }
         let votes = () => {
-            console.log(ballots)
+    
             ballots.sort((ballot1, ballot2) => {
                 let order1 = categories.filter(category => {
                     return (category._id === ballot1.category_id)
@@ -58,8 +58,7 @@ class BallotDisplay extends Component {
                 return (order1 - order2)
             });
             return ballots.map((ballot) => {
-                console.log("did the map fire?")
-                console.log("nominees", nominees)
+        
                 let categoryTitle = categories.filter(category => {
                     return (category._id === ballot.category_id)
                 })[0].award_name
