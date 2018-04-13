@@ -24,11 +24,12 @@ mongoose.connect("mongodb://localhost:27017/screaming-at-award-shows", (err) => 
 })
 
 // APPLY MIDDLEWARE & ROUTES
-app.use("/api", expressJwt({secret: process.env.SECRET}));
-app.use(bodyParser.json());
+// app.use("/api", expressJwt({secret: process.env.SECRET}));
+// app.use(bodyParser.json());
 app.use("/admin", adminRouter);
 app.use("/public", publicRouter)
-app.use("/api/ballots", ballotRouter)
+// app.use("/api/ballots", ballotRouter)
+app.use("/ballots", ballotRouter)
 
 // LISTENING ON PORT
 app.listen(8080, () => {

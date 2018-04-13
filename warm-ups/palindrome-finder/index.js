@@ -4,7 +4,7 @@ let isPalindrome = (str) => {
     let counter = 0
     let endIndex = arr.length - 1
    
-    for (let i = 0; i < arr.length; ++i) {
+    for (let i = 0; i < arr.length; i++) {
             (arr[i] === arr[endIndex - i]) ? null : counter++;    
     }
     return (counter === 0) ? true : false;
@@ -13,7 +13,7 @@ let isPalindrome = (str) => {
 
 let isPalindrome2 = (str) => {
     str = str.replace(/[^A-z]/g, "");
-    for (let i = 0; i < str.length / 2; ++i) {
+    for (let i = 0; i < str.length / 2; i++) {
         let first = str[i].toLowerCase();
         let last = str[str.length - 1 -i].toLowerCase();
         if (first !== last) {

@@ -8,9 +8,9 @@ const express = require("express");
 const awardModel = require("../../models/awards-model");
 const categoryModel = require("../../models/category-model");
 const noimneeModel = require("../../models/nominee-model");
+
 // ROUTES
 const awardsRouter = express.Router();
-
 awardsRouter.get("/", (req, res) => {
     awardModel.find(req.query, (err, foundAwards) => {
         if (err) {

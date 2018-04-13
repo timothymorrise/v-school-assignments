@@ -9,9 +9,10 @@
 const axios = require("axios");
 
 // VARIABLES
-const getBallotsUrl = "/ballots?awards_id="
-const getBallotUrl = "/ballots?category_id="
-const ballotsUrl = "/ballots/"
+const getBallotsUrl = "/ballots?awards_id=";
+const getBallotUrl = "/ballots?category_id=";
+const ballotsUrl = "/ballots/";
+
 // GET BALLOTS
 export const getBallots = (awardId) => {
     return dispatch => {

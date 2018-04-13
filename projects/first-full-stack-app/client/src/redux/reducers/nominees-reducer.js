@@ -44,7 +44,7 @@ export let getSomeNominees = (id) => {
 }
 
 // REDUCER FUNCTIONS
-let nominees = (prevData = { loading: true, data: [], ballotData: [] }, action ) => {
+let nominees = (prevData = { loading: true, someLoading: true, data: [], ballotData: [] }, action ) => {
     switch(action.type) {
         case "RESET_LOADING_NOMINEE":
             return {
@@ -54,7 +54,7 @@ let nominees = (prevData = { loading: true, data: [], ballotData: [] }, action )
         case "GET_SOME_NOMINEES":
             return {
                 ...prevData,
-                loading: false,
+                someLoading: false,
                 ballotData: [...action.payload]
             };
         case "GET_NOMINEES":
