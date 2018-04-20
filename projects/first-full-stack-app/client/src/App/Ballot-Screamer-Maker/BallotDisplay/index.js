@@ -58,7 +58,6 @@ class BallotDisplay extends Component {
                 return (order1 - order2)
             });
             return ballots.map((ballot) => {
-        
                 let categoryTitle = categories.filter(category => {
                     return (category._id === ballot.category_id)
                 })[0].award_name

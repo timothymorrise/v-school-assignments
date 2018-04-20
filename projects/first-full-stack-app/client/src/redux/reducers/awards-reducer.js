@@ -8,7 +8,7 @@ const axios = require("axios");
 const awardsUrl = "/public/awards"
 
 // ACTION CREATORS
-export let getAwards = () => {
+export const getAwards = () => {
     return dispatch => {
         dispatch({type: "RESET_LOADING_AWARDS"})
         axios.get(awardsUrl)
@@ -27,7 +27,7 @@ export let getAwards = () => {
 }
 
 // REDUCER FUNCTIONS
-let awards = (prevData = { loading: true, data: [] }, action ) => {
+const awards = (prevData = { loading: true, data: [] }, action ) => {
     switch(action.type) {
         case "RESET_LOADING_AWARDS":
             return {
