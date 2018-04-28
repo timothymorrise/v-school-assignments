@@ -3,27 +3,27 @@
 
 // IMPORT FROM PACKAGES
 const express = require("express");
-const passport = require("passport");
-const Strategy = require("passport-local");
+// const passport = require("passport");
+// const Strategy = require("passport-local");
 const jwt = require("jsonwebtoken");
 
 // IMPORT FROM FILES -- MODELS
 const User = require("../models/user-model");
 
 // PASSPORT STRATEGIES
-passport.use(new Strategy((usernameAttempt, passwordAttempt, done) => {
-    User.findOne({ username: usernameAttempt }, (err, currentUser) => {
-        if (err) {
-            done(err, false)
-        } else if (currentUser === null) {
-            done(null, false)
-        } else {
-            currentUser.auth(passwordAttempt, (isCorrect) => {
-                done(null, isCorrect)
-            });
-        }
-    })
-}))
+// passport.use(new Strategy((usernameAttempt, passwordAttempt, done) => {
+//     User.findOne({ username: usernameAttempt }, (err, currentUser) => {
+//         if (err) {
+//             done(err, false)
+//         } else if (currentUser === null) {
+//             done(null, false)
+//         } else {
+//             currentUser.auth(passwordAttempt, (isCorrect) => {
+//                 done(null, isCorrect)
+//             });
+//         }
+//     })
+// }))
 
 // ROUTE METHODS
 const authRouter = express.Router();
@@ -40,8 +40,14 @@ authRouter.post("/signup", (req, res) => {
         // If the function reaches this point and hasn't returned already, we're safe
         // to create the new user in the database.
         const newUser = new User(req.body);
+        console.log(newUser)
         newUser.save((err, user) => {
-            if (err) return res.status(500).send({ success: false, err });
+            if (err) {
+                console.log("we just had an error here, sally")
+                console.error(err)
+                return res.status(500).send({ success: false, err });
+                
+            }
             // If the user signs up, we might as well give them a token right now
             // So they don't then immediately have to log in as well
             const token = jwt.sign(user.toObject(), process.env.SECRET);
@@ -50,7 +56,7 @@ authRouter.post("/signup", (req, res) => {
     });
 });
 
-authRouter.use(passport.initialize);
+// authRouter.use(passport.initialize);
 
 authRouter.post("/login", (req, res) => {
     // Try to find the user with the submitted username (lowercased)

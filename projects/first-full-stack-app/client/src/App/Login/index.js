@@ -1,18 +1,16 @@
-// SIGN UP -- COMPONENT
+// LOGIN -- COMPONENT
 // ==============================
 
 // IMPORT FROM PACKAGES
-import React, { Component } from "react"
-
+import React, { Component } from 'react'
 // IMPORT FROM FILES
 
 // CONSTRUCTOR
-class SignUpForm extends Component {
+ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
             inputs: {
-                name: "",
                 username: "",
                 password: ""
             }
@@ -37,7 +35,6 @@ class SignUpForm extends Component {
     clearInputs() {
         this.setState({
             inputs: {
-                name: "",
                 username: "",
                 password: ""
             }
@@ -53,12 +50,7 @@ class SignUpForm extends Component {
 
     render() {
         return <form onSubmit={this.handleSubmit}>
-                <h3>Signup</h3>
-                <input name="name"
-                        onChange={this.handleChange}
-                        value={this.name}
-                        type="text"
-                        placeholder="Name"/>
+                <h3>Log In</h3>
                 <input name="username"
                         onChange={this.handleChange}
                         value={this.username}
@@ -69,14 +61,9 @@ class SignUpForm extends Component {
                         value={this.password}
                         type="text"
                         placeholder="Password"/>
-                <button type="submit">Create Account</button>
+                <button type="submit">Submit</button>
         </form>
     }
 }
 
-// EXPORTS
-const mapStateToProps = () => {
-
-}
-
-export default SignUpForm
+export default Login

@@ -60,6 +60,9 @@ class BallotScreamer extends Component {
                         <br />
                         <Form categoryId={category._id} awardId={award_id} lateralMove={this.lateralMove}/>
                     </div>
+                    <div>
+            
+                    </div>
                     <BallotDisplay awardId={award_id} />
                 </div>
         )
